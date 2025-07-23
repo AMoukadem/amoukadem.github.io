@@ -7,29 +7,29 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
-site_theme               : "default"
-title                    : "Your Name / Site Title"
-title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+title: "Ali Moukadem"
+name: &name "Ali Moukadem"
+description: &description "Page personnelle"
+url: "https://amoukadem.github.io"  # ✅ Votre vraie URL
+repository: "AMoukadem/amoukadem.github.io"  # ✅ Corrigé
+
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
-  # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+  avatar: "profile.png" 
+  name: "Ali Moukadem"
+  bio: "Maître de conférences / Chercheur en [votre domaine]"
+  location: "France"
+  employer: "Université XYZ"
+  email: "ali.moukadem@exemple.com"
+  googlescholar: "https://scholar.google.com/citations?user=Zrv5DMIAAAAJ&hl=fr"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+  github: "AMoukadem"
+  linkedin: "amoukadem"
+  #twitter: "AliMoukadem"
+
 
   # Academic websites
   academia         : # URL

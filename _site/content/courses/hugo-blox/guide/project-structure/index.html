@@ -1,0 +1,65 @@
+<h2 id="folder-structure">Folder Structure</h2>
+
+<p>There are <strong>4 main folders for Hugo-based sites</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">content/</code> for your Markdown-formatted content files (homepage, etc.)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">_index.md</code> the homepage (<strong>Hugo requires that the homepage and archive pages have an underscore prefix</strong>)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">assets/</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">media/</code> for your media files (images, videos)
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">icons/custom/</code> upload any custom SVG icons you want to use</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">config/_default/</code> for your site configuration files
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">hugo.yaml</code> to configure Hugo (site title, URL, Hugo options, setup per-folder page features)</li>
+      <li><code class="language-plaintext highlighter-rouge">module.yaml</code> to install or uninstall Hugo themes and plugins</li>
+      <li><code class="language-plaintext highlighter-rouge">params.yaml</code> to configure Hugo Blox options (SEO, analytics, site features)</li>
+      <li><code class="language-plaintext highlighter-rouge">menus.yaml</code> to configure your menu links (if the menu is enabled in <code class="language-plaintext highlighter-rouge">params.yaml</code>)</li>
+      <li><code class="language-plaintext highlighter-rouge">languages.yaml</code> to configure your site’s language or to set language-specific options in a multilingual site</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">static/uploads/</code> for any files you want visitors to download, such as a PDF</li>
+  <li><code class="language-plaintext highlighter-rouge">go.mod</code> sets the version of Hugo themes/plugins which your site uses</li>
+</ul>
+
+<h2 id="hugo-file-naming-convention">Hugo File Naming Convention</h2>
+
+<p>Hugo gives us two options to name standard page files: as <code class="language-plaintext highlighter-rouge">TITLE/index.md</code> or <code class="language-plaintext highlighter-rouge">TITLE.md</code> where <code class="language-plaintext highlighter-rouge">TITLE</code> is your page name.</p>
+
+<p>The page name should be lowercase and using hyphens (<code class="language-plaintext highlighter-rouge">-</code>) instead of spaces.</p>
+
+<p>Both approaches result in the same output, so you can choose your preferred approach to naming and organizing files. A benefit to the folder-based approach is that all your page’s files (such as images) are self-contained within the page’s folder, so it’s more portable if you wish to share the original Markdown page with someone.</p>
+
+<p>The homepage is a special case as <strong>Hugo requires the homepage and listing pages to be named</strong> <code class="language-plaintext highlighter-rouge">_index.md</code>.</p>
+
+<h2 id="docs-navigation">Docs Navigation</h2>
+
+<p>The docs navigation is automatically generated based on the content in the <code class="language-plaintext highlighter-rouge">docs/</code> folder and is sorted alphabetically.</p>
+
+<p>The order of pages can be changed by adding the <code class="language-plaintext highlighter-rouge">weight</code> parameter in the front matter of your Markdown files.</p>
+
+<p>In the example below, the <code class="language-plaintext highlighter-rouge">example.md</code> page will appear before the <code class="language-plaintext highlighter-rouge">test.md</code> page as it has a lower <code class="language-plaintext highlighter-rouge">weight</code>:</p>
+
+<p>Page <code class="language-plaintext highlighter-rouge">example.md</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My Example</span>
+<span class="na">weight</span><span class="pi">:</span> <span class="m">1</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>Page <code class="language-plaintext highlighter-rouge">test.md</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My Test</span>
+<span class="na">weight</span><span class="pi">:</span> <span class="m">2</span>
+<span class="nn">---</span>
+</code></pre></div></div>

@@ -1,0 +1,231 @@
+<p>Hugo Blox supports GitHub and Obsidian-style Markdown callouts for maximum compatibility and content portability.</p>
+
+<p>Callouts are a useful feature to draw attention to important or related content such as notes, hints, or warnings in your articles.</p>
+
+<!--more-->
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="basic-callout-types">Basic Callout Types</h3>
+
+<p>Hugo Blox supports all 15+ callout types from <a href="https://help.obsidian.md/callouts">Obsidian’s documentation</a>:</p>
+
+<p><strong>Information &amp; Notes:</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!NOTE]  </span>
+<span class="gt">&gt; This is a note callout with important information that users should know.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!NOTE]
+This is a note callout with important information that users should know.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!INFO]</span>
+<span class="gt">&gt; Alternative info callout - same styling as NOTE.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!INFO]
+Alternative info callout - same styling as NOTE.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!ABSTRACT]</span>
+<span class="gt">&gt; Use for abstracts, summaries, or TL;DR sections.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!ABSTRACT]
+Use for abstracts, summaries, or TL;DR sections.</p>
+</blockquote>
+
+<p><strong>Actions &amp; Tasks:</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!TODO]</span>
+<span class="gt">&gt; This is something that needs to be done.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!TODO]
+This is something that needs to be done.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!TIP]</span>
+<span class="gt">&gt; Here's a helpful tip to make your workflow more efficient!</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!TIP]
+Here’s a helpful tip to make your workflow more efficient!</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!SUCCESS]</span>
+<span class="gt">&gt; Great job! This operation completed successfully.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!SUCCESS]
+Great job! This operation completed successfully.</p>
+</blockquote>
+
+<p><strong>Questions &amp; Interactive:</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!QUESTION]</span>
+<span class="gt">&gt; What do you think about this approach? Let us know!</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!QUESTION]
+What do you think about this approach? Let us know!</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!EXAMPLE]</span>
+<span class="gt">&gt; Here's a practical example of how to implement this feature.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!EXAMPLE]
+Here’s a practical example of how to implement this feature.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!QUOTE]</span>
+<span class="gt">&gt; "The best way to predict the future is to invent it." - Alan Kay</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!QUOTE]
+“The best way to predict the future is to invent it.” - Alan Kay</p>
+</blockquote>
+
+<p><strong>Warnings &amp; Errors:</strong></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!WARNING]</span>
+<span class="gt">&gt; Be careful! This action might have unexpected consequences.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!WARNING]
+Be careful! This action might have unexpected consequences.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!CAUTION]</span>
+<span class="gt">&gt; Danger! This operation is irreversible and could cause data loss.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!CAUTION]
+Danger! This operation is irreversible and could cause data loss.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!IMPORTANT]</span>
+<span class="gt">&gt; This is critical information that users must understand to proceed.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!IMPORTANT]
+This is critical information that users must understand to proceed.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!DANGER]</span>
+<span class="gt">&gt; This is extremely dangerous - proceed with extreme caution!</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!DANGER]
+This is extremely dangerous - proceed with extreme caution!</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!FAILURE]</span>
+<span class="gt">&gt; This operation failed. Check your configuration and try again.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!FAILURE]
+This operation failed. Check your configuration and try again.</p>
+</blockquote>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!BUG]</span>
+<span class="gt">&gt; Known issue: This feature doesn't work properly in Safari &lt; 14.</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!BUG]
+Known issue: This feature doesn’t work properly in Safari &lt; 14.</p>
+</blockquote>
+
+<h3 id="custom-titles">Custom Titles</h3>
+
+<p>You can customize the title of any callout:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; [!WARNING]+ Custom Warning Title</span>
+<span class="gt">&gt; This warning has a custom title instead of just "Warning".</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!WARNING]+ Custom Warning Title<br />
+This warning has a custom title instead of just “Warning”.</p>
+</blockquote>
+
+<h3 id="legacy-syntax-deprecated">Legacy Syntax (Deprecated)</h3>
+
+<p>The old shortcode syntax still works but shows a deprecation warning:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+This still works but is deprecated. Use the Markdown syntax above!
+
+</code></pre></div></div>
+
+<h3 id="css-customization">CSS Customization</h3>
+
+<p>Hugo Blox generates callouts with semantic CSS classes and data attributes, making customization easy. Each callout has:</p>
+
+<ul>
+  <li>Base class: <code class="language-plaintext highlighter-rouge">.callout</code></li>
+  <li>Type-specific data attribute: <code class="language-plaintext highlighter-rouge">data-callout="note"</code></li>
+  <li>Component classes: <code class="language-plaintext highlighter-rouge">.callout-icon</code>, <code class="language-plaintext highlighter-rouge">.callout-title</code>, <code class="language-plaintext highlighter-rouge">.callout-content</code>, <code class="language-plaintext highlighter-rouge">.callout-body</code></li>
+</ul>
+
+<p><strong>Custom CSS Example</strong> (add to your <code class="language-plaintext highlighter-rouge">assets/css/custom.css</code>):</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Customize NOTE callouts */</span>
+<span class="nc">.callout</span><span class="o">[</span><span class="nt">data-callout</span><span class="o">=</span><span class="s1">"note"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">border-left-width</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span>
+  <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">4px</span> <span class="m">6px</span> <span class="m">-1px</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="p">/</span> <span class="m">0.1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Make SUCCESS callouts pulse */</span>
+<span class="nc">.callout</span><span class="o">[</span><span class="nt">data-callout</span><span class="o">=</span><span class="s1">"success"</span><span class="o">]</span> <span class="p">{</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">pulse</span> <span class="m">2s</span> <span class="n">infinite</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Custom icon styling */</span>
+<span class="nc">.callout-icon</span> <span class="nt">svg</span> <span class="p">{</span>
+  <span class="nl">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="m">0.2s</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.callout</span><span class="nd">:hover</span> <span class="nc">.callout-icon</span> <span class="nt">svg</span> <span class="p">{</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1.1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Dark mode overrides */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">prefers-color-scheme</span><span class="p">:</span> <span class="n">dark</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nc">.callout</span><span class="o">[</span><span class="nt">data-callout</span><span class="o">=</span><span class="s1">"warning"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">92</span> <span class="m">25</span> <span class="m">2</span><span class="p">);</span>
+    <span class="nl">border-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">245</span> <span class="m">158</span> <span class="m">11</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This approach matches <a href="https://help.obsidian.md/callouts">Obsidian’s CSS customization system</a>, ensuring your styles work across platforms.</p>
+
+<h3 id="benefits-of-the-new-syntax">Benefits of the New Syntax</h3>
+
+<ul>
+  <li><strong>Portable</strong>: Works with GitHub, Obsidian, and other Markdown editors</li>
+  <li><strong>Standard</strong>: Uses widely-adopted Markdown callout syntax</li>
+  <li><strong>Clean</strong>: No Hugo-specific shortcodes needed</li>
+  <li><strong>Future-proof</strong>: Supported by the latest Hugo versions (0.132.0+)</li>
+  <li><strong>Customizable</strong>: Semantic CSS classes and data attributes for easy styling</li>
+  <li><strong>Complete</strong>: All 15+ Obsidian callout types supported</li>
+  <li><strong>Multilingual</strong>: Callout titles are automatically translated based on your site’s language (and can be customized in the language packs)</li>
+</ul>

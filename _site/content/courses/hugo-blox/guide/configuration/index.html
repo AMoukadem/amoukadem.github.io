@@ -1,0 +1,47 @@
+<p>The configuration of your site can be found in <code class="language-plaintext highlighter-rouge">config/_default/</code>.</p>
+
+<!--more-->
+
+<h2 id="full-documentation">Full Documentation</h2>
+
+<p>See https://docs.hugoblox.com/getting-started/customize/</p>
+
+<h2 id="navigation">Navigation</h2>
+
+<h3 id="menu">Menu</h3>
+
+<p>See https://docs.hugoblox.com/getting-started/customize/#menu-items</p>
+
+<h2 id="left-sidebar">Left Sidebar</h2>
+
+<p>Links are automatically generated from the structure of your content directory. Simply add a folder to nest a page.</p>
+
+<h3 id="extra-links">Extra Links</h3>
+
+<p>Additional links can be added under the <code class="language-plaintext highlighter-rouge">sidebar</code> section of your <code class="language-plaintext highlighter-rouge">config/_default/menus.yaml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">menu</span><span class="pi">:</span>
+  <span class="na">sidebar</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Need</span><span class="nv"> </span><span class="s">help?"</span>
+      <span class="na">params</span><span class="pi">:</span>
+        <span class="na">type</span><span class="pi">:</span> <span class="s">separator</span>
+      <span class="na">weight</span><span class="pi">:</span> <span class="m">1</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">A</span><span class="nv"> </span><span class="s">page"</span>
+      <span class="na">pageRef</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/page-filename-here"</span>
+      <span class="na">weight</span><span class="pi">:</span> <span class="m">2</span>
+    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">An</span><span class="nv"> </span><span class="s">external</span><span class="nv"> </span><span class="s">link</span><span class="nv"> </span><span class="s">↗"</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://hugoblox.com"</span>
+      <span class="na">weight</span><span class="pi">:</span> <span class="m">3</span>
+</code></pre></div></div>
+
+<h2 id="right-sidebar">Right Sidebar</h2>
+
+<p>A table of contents is automatically generated from the headings your Markdown file.</p>
+
+<p>It can optionally be disabled by setting <code class="language-plaintext highlighter-rouge">toc: false</code> in the front matter of a page:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My Page</span>
+<span class="na">toc</span><span class="pi">:</span> <span class="no">false</span>
+<span class="nn">---</span>
+</code></pre></div></div>

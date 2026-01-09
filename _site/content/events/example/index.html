@@ -1,0 +1,448 @@
+<h2 id="-why-markdown-slides">🎯 Why Markdown Slides?</h2>
+
+<blockquote>
+  <p>[!SUCCESS] True Presentation Freedom
+Unlike PowerPoint or Keynote, your presentations are <strong>future-proof</strong>, <strong>portable</strong>, and completely <strong>under your control</strong>. No proprietary formats, no vendor lock-in, no subscription fees.</p>
+</blockquote>
+
+<h3 id="the-problem-with-traditional-slides">The Problem with Traditional Slides</h3>
+
+<p><strong>PowerPoint &amp; Keynote:</strong></p>
+<ul>
+  <li>💸 Expensive licenses or subscriptions</li>
+  <li>🔒 Proprietary file formats (<code class="language-plaintext highlighter-rouge">.pptx</code>, <code class="language-plaintext highlighter-rouge">.key</code>)</li>
+  <li>💻 Platform-specific (Windows/Mac only)</li>
+  <li>📦 Large binary files</li>
+  <li>🚫 Difficult to version control</li>
+  <li>😰 Lost formatting when sharing</li>
+</ul>
+
+<p><strong>Google Slides:</strong></p>
+<ul>
+  <li>☁️ Requires internet connection</li>
+  <li>🔐 Data stored on Google’s servers</li>
+  <li>📱 Limited offline editing</li>
+  <li>🎨 Formatting breaks when exporting</li>
+  <li>🔗 Dependency on Google’s platform</li>
+</ul>
+
+<h3 id="the-hugo-blox-solution">The Hugo Blox Solution</h3>
+
+<blockquote>
+  <p>[!TIP] <strong>Markdown Changes Everything</strong>
+Write your presentations in simple, human-readable Markdown. Edit anywhere, present anywhere, own forever.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-what-you-get">✨ What You Get</h2>
+
+<h3 id="-professional-design-zero-effort">🎨 Professional Design, Zero Effort</h3>
+
+<ul>
+  <li><strong>15+ Built-in Themes</strong> — Black, white, sky, league, and more</li>
+  <li><strong>Syntax Highlighting</strong> — Beautiful code blocks with 50+ languages</li>
+  <li><strong>Math Support</strong> — LaTeX equations render perfectly: $E = mc^2$</li>
+  <li><strong>Responsive</strong> — Looks great on any screen size</li>
+</ul>
+
+<h3 id="-write-in-plain-text">📝 Write in Plain Text</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## My Slide Title</span>
+<span class="p">
+-</span> Point one
+<span class="p">-</span> Point two
+<span class="p">-</span> Point three
+
+<span class="p">```</span><span class="nl">python
+</span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s">"World!"</span>
+<span class="p">```</span>
+<span class="p">
+---
+</span></code></pre></div></div>
+
+<p>That’s it! No complex UI, no formatting headaches.</p>
+
+<h3 id="-edit-anywhere-anytime">🔄 Edit Anywhere, Anytime</h3>
+
+<blockquote>
+  <p>[!IMPORTANT] <strong>Zero Lock-In</strong>
+Your slides are just Markdown files. Edit them in:</p>
+  <ul>
+    <li><strong>HugoBlox Studio</strong> — Visual editing with live preview</li>
+    <li><strong>VS Code</strong> — With Markdown extensions</li>
+    <li><strong>Obsidian</strong> — Note-taking app that speaks Markdown</li>
+    <li><strong>Typora</strong> — Minimal distraction writing</li>
+    <li><strong>Any text editor</strong> — Even Notepad works!</li>
+  </ul>
+</blockquote>
+
+<h3 id="-advanced-features">🎯 Advanced Features</h3>
+
+<p><strong>Dual Column Layouts:</strong></p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display: flex; gap: 2rem;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"flex: 1;"</span><span class="nt">&gt;</span>Column 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"flex: 1;"</span><span class="nt">&gt;</span>Column 2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Fragment Animations:</strong></p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Appear on click!
+</code></pre></div></div>
+
+<p><strong>Speaker Notes:</strong></p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Note: Your private notes here
+(visible in presenter view only)
+</code></pre></div></div>
+
+<p><strong>Vertical Slide Stacks:</strong>
+Navigate down for sub-topics!</p>
+
+<hr />
+
+<h2 id="-getting-started-is-easy">🚀 Getting Started is Easy</h2>
+
+<blockquote>
+  <p>[!EXAMPLE] <strong>Create Your First Slide Deck in 3 Steps</strong></p>
+</blockquote>
+
+<h3 id="step-1-create-your-slides">Step 1: Create Your Slides</h3>
+
+<p>Create <code class="language-plaintext highlighter-rouge">content/slides/my-talk/index.md</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">Amazing</span><span class="nv"> </span><span class="s">Talk"</span>
+<span class="na">type</span><span class="pi">:</span> <span class="s">slides</span>
+<span class="na">slides</span><span class="pi">:</span>
+  <span class="na">theme</span><span class="pi">:</span> <span class="s">black</span>
+<span class="nn">---</span>
+
+<span class="c1"># My Amazing Talk</span>
+<span class="c1">### Your Name</span>
+
+<span class="nn">---</span>
+
+<span class="c1">## Main Points</span>
+
+<span class="pi">-</span> <span class="s">Point </span><span class="m">1</span>
+<span class="pi">-</span> <span class="s">Point </span><span class="m">2</span>
+<span class="pi">-</span> <span class="s">Point </span><span class="m">3</span>
+
+<span class="nn">---</span>
+
+<span class="c1">## Thank You!</span>
+</code></pre></div></div>
+
+<h3 id="step-2-link-to-your-event">Step 2: Link to Your Event</h3>
+
+<p>In your event page (<code class="language-plaintext highlighter-rouge">content/events/my-event/index.md</code>):</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">Conference</span><span class="nv"> </span><span class="s">Presentation"</span>
+<span class="na">slides</span><span class="pi">:</span> <span class="s2">"</span><span class="s">my-talk"</span>  <span class="c1"># References the slides folder name</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="step-3-present">Step 3: Present!</h3>
+
+<p>Your slides are automatically:</p>
+<ul>
+  <li>✅ Embedded on the event page</li>
+  <li>✅ Available in fullscreen mode (click  button)</li>
+  <li>✅ Accessible at a direct URL</li>
+  <li>✅ Keyboard-navigatable (→ ← keys)</li>
+</ul>
+
+<hr />
+
+<h2 id="-why-academics--researchers-love-it">💎 Why Academics &amp; Researchers Love It</h2>
+
+<blockquote>
+  <p>[!QUOTE]
+“I can finally version control my presentations with Git, collaborate using GitHub, and never worry about formatting breaking again. Game changer for reproducible research!”
+— <em>Dr. Xin Liu, MIT</em></p>
+</blockquote>
+
+<h3 id="perfect-for-research">Perfect for Research</h3>
+
+<ul>
+  <li><strong>Version Control</strong> — Track every change with Git</li>
+  <li><strong>Collaboration</strong> — Use GitHub pull requests for slide reviews</li>
+  <li><strong>Reproducibility</strong> — Slides are plain text, commit them with your code</li>
+  <li><strong>Open Science</strong> — Share presentations on GitHub, no barriers</li>
+  <li><strong>Citations</strong> — Include BibTeX references easily</li>
+  <li><strong>Jupyter Integration</strong> — Embed notebooks and visualizations</li>
+</ul>
+
+<h3 id="perfect-for-teaching">Perfect for Teaching</h3>
+
+<ul>
+  <li><strong>Reusable Content</strong> — Mix and match slides across courses</li>
+  <li><strong>Student Contributions</strong> — Students can submit slide PRs</li>
+  <li><strong>Live Coding</strong> — Syntax highlighting for all languages</li>
+  <li><strong>Interactive Examples</strong> — Embed interactive visualizations</li>
+  <li><strong>Accessible</strong> — Keyboard navigation, screen reader friendly</li>
+</ul>
+
+<hr />
+
+<h2 id="-see-it-in-action">🎬 See It In Action</h2>
+
+<blockquote>
+  <p>[!NOTE]
+<strong>Try it now!</strong> The slides embedded above demonstrate all these features:</p>
+  <ul>
+    <li>Code highlighting with Python</li>
+    <li>Mathematical equations with LaTeX</li>
+    <li>Dual column layouts (slides 4-6)</li>
+    <li>Fragment animations</li>
+    <li>Multiple themes</li>
+  </ul>
+
+  <p>Click the  <strong>fullscreen button</strong> (top right) to experience presentation mode!</p>
+</blockquote>
+
+<h3 id="live-features-to-try">Live Features to Try</h3>
+
+<ol>
+  <li><strong>Navigate</strong>: Use arrow keys (→ ←) or click controls</li>
+  <li><strong>Fullscreen</strong>: Click the expand button to go fullscreen</li>
+  <li><strong>Speaker Notes</strong>: Press <code class="language-plaintext highlighter-rouge">S</code> to open presenter view (try it!)</li>
+  <li><strong>Overview</strong>: Press <code class="language-plaintext highlighter-rouge">ESC</code> to see all slides at once</li>
+  <li><strong>Search</strong>: Press <code class="language-plaintext highlighter-rouge">/</code> to search slide content</li>
+  <li><strong>Zoom</strong>: <code class="language-plaintext highlighter-rouge">Alt+Click</code> to zoom into details</li>
+</ol>
+
+<hr />
+
+<h2 id="-comparison">🆚 Comparison</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>PowerPoint</th>
+      <th>Google Slides</th>
+      <th><strong>Hugo Blox</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Cost</strong></td>
+      <td>$159.99/year</td>
+      <td>Free*</td>
+      <td><strong>Free Forever</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Format</strong></td>
+      <td>Binary (<code class="language-plaintext highlighter-rouge">.pptx</code>)</td>
+      <td>Proprietary</td>
+      <td><strong>Plain Markdown</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Version Control</strong></td>
+      <td>❌ Difficult</td>
+      <td>❌ Limited</td>
+      <td><strong>✅ Git Native</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Offline Editing</strong></td>
+      <td>✅ Yes</td>
+      <td>⚠️ Limited</td>
+      <td><strong>✅ Fully Offline</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Platform Lock-in</strong></td>
+      <td>⚠️ Microsoft</td>
+      <td>⚠️ Google</td>
+      <td><strong>✅ None</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Code Highlighting</strong></td>
+      <td>⚠️ Basic</td>
+      <td>⚠️ Limited</td>
+      <td><strong>✅ 50+ Languages</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Math Equations</strong></td>
+      <td>⚠️ Clunky</td>
+      <td>⚠️ Basic</td>
+      <td><strong>✅ Full LaTeX</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Portability</strong></td>
+      <td>❌ Poor</td>
+      <td>❌ Requires Google</td>
+      <td><strong>✅ Works Anywhere</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Future-Proof</strong></td>
+      <td>❌ Format changes</td>
+      <td>⚠️ API changes</td>
+      <td><strong>✅ Plain Text Forever</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Open Source</strong></td>
+      <td>❌ No</td>
+      <td>❌ No</td>
+      <td><strong>✅ Yes</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>[!SUCCESS]
+<strong>Hugo Blox wins on freedom, portability, and long-term sustainability.</strong></p>
+</blockquote>
+
+<hr />
+
+<h2 id="️-advanced-capabilities">🛠️ Advanced Capabilities</h2>
+
+<h3 id="code-blocks-with-syntax-highlighting">Code Blocks with Syntax Highlighting</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">Transformer</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">d_model</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">nhead</span><span class="o">=</span><span class="mi">8</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">attention</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="n">MultiheadAttention</span><span class="p">(</span><span class="n">d_model</span><span class="p">,</span> <span class="n">nhead</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">attention</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="mathematical-equations">Mathematical Equations</h3>
+
+<p>Display equations with LaTeX:</p>
+
+<div class="language-latex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">$$</span><span class="nb">
+</span><span class="nv">\nabla</span><span class="nb"> </span><span class="nv">\times</span><span class="nb"> </span><span class="nv">\vec</span><span class="p">{</span><span class="nb">E</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="o">-</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\partial</span><span class="nb"> </span><span class="nv">\vec</span><span class="p">{</span><span class="nb">B</span><span class="p">}}{</span><span class="nv">\partial</span><span class="nb"> t</span><span class="p">}</span><span class="nb">
+</span><span class="p">$$</span>
+
+<span class="p">$$</span><span class="nb">
+</span><span class="nv">\int</span><span class="p">_{</span><span class="o">-</span><span class="nv">\infty</span><span class="p">}^{</span><span class="nv">\infty</span><span class="p">}</span><span class="nb"> e</span><span class="p">^{</span><span class="o">-</span><span class="nb">x</span><span class="p">^</span><span class="m">2</span><span class="p">}</span><span class="nb"> dx </span><span class="o">=</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="nv">\pi</span><span class="p">}</span><span class="nb">
+</span><span class="p">$$</span>
+</code></pre></div></div>
+
+<h3 id="dual-column-layouts">Dual Column Layouts</h3>
+
+<p>Perfect for before/after comparisons, code + explanation, or image + text:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display: flex; gap: 2rem;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"flex: 1;"</span><span class="nt">&gt;</span>Left content<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"flex: 1;"</span><span class="nt">&gt;</span>Right content<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>See slides 4-6 in the embedded presentation above for live examples!</p>
+
+<hr />
+
+<h2 id="-for-educators-teach-the-future">🎓 For Educators: Teach the Future</h2>
+
+<blockquote>
+  <p>[!TIP] <strong>Empower Your Students</strong>
+Teaching with Hugo Blox means teaching modern, transferable skills:</p>
+  <ul>
+    <li>Markdown (used everywhere: GitHub, Notion, Obsidian)</li>
+    <li>Version control (essential for careers)</li>
+    <li>Web technologies (HTML, CSS)</li>
+    <li>Reproducible science practices</li>
+  </ul>
+</blockquote>
+
+<h3 id="course-integration">Course Integration</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>courses/
+├── ml-101/
+│   ├── lecture-1/
+│   │   ├── index.md (slides)
+│   │   └── notes.md
+│   ├── lecture-2/
+│   │   └── index.md
+│   └── _index.md
+</code></pre></div></div>
+
+<p>Each lecture gets its own slide deck, all version controlled, all editable by students as PRs.</p>
+
+<hr />
+
+<h2 id="-join-the-community">🌍 Join the Community</h2>
+
+<blockquote>
+  <p>[!IMPORTANT] <strong>Built by Academics, for Academics</strong>
+Hugo Blox is used by researchers at:</p>
+  <ul>
+    <li>🎓 Stanford, MIT, Harvard, Oxford, Cambridge</li>
+    <li>🏢 Google Research, Meta AI, OpenAI</li>
+    <li>🔬 CERN, NASA, NIH</li>
+    <li>🌐 Thousands of universities worldwide</li>
+  </ul>
+</blockquote>
+
+<h3 id="get-help--connect">Get Help &amp; Connect</h3>
+
+<ul>
+  <li>📚 <a href="https://docs.hugoblox.com/guides/slides/">Documentation</a></li>
+  <li>💬 <a href="https://discord.gg/z8wNYzb">Discord Community</a></li>
+  <li>🐛 <a href="https://github.com/HugoBlox/kit/issues">GitHub Issues</a></li>
+  <li>🐦 <a href="https://twitter.com/BuildLore">Follow @BuildLore</a></li>
+</ul>
+
+<hr />
+
+<h2 id="-ready-to-create">🚀 Ready to Create?</h2>
+
+<blockquote>
+  <p>[!SUCCESS] <strong>Start Building Beautiful Presentations Today</strong>
+No installation required. No account needed. Just Markdown and your creativity.</p>
+</blockquote>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="-additional-resources">📖 Additional Resources</h2>
+
+<h3 id="templates--examples">Templates &amp; Examples</h3>
+
+<ul>
+  <li><a href="https://github.com/HugoBlox/theme-academic-cv">Academic Slides Template</a></li>
+</ul>
+
+<!--
+- [Conference Talk Template](https://github.com/HugoBlox/starter-presentation)
+- [Course Lecture Template](https://github.com/HugoBlox/starter-course)
+
+
+### Tutorials
+
+- [Creating Your First Slide Deck](https://docs.hugoblox.com/tutorial/slides/)
+- [Advanced Slide Layouts](https://docs.hugoblox.com/reference/slides/)
+- [Customizing Themes](https://docs.hugoblox.com/customization/)
+- [Using HugoBlox Studio](https://docs.hugoblox.com/studio/)
+-->
+
+<h3 id="tips--tricks">Tips &amp; Tricks</h3>
+
+<blockquote>
+  <p>[!TIP] <strong>Pro Tips for Better Presentations</strong></p>
+  <ol>
+    <li>Keep slides simple — one idea per slide</li>
+    <li>Use dual columns for comparisons</li>
+    <li>Add speaker notes with <code class="language-plaintext highlighter-rouge">Note:</code> prefix</li>
+    <li>Test presenter view before your talk</li>
+    <li>Use fragments to control pacing</li>
+    <li>Version control your slides with Git</li>
+    <li>Share source files for reproducibility</li>
+  </ol>
+</blockquote>
+
+<hr />
+
+<p><strong>Have questions?</strong> Check out the <a href="https://docs.hugoblox.com/guides/slides/">FAQ</a> or <a href="https://discord.gg/z8wNYzb">ask the community</a>!</p>
+
+<p><strong>Want to contribute?</strong> Hugo Blox is open source! <a href="https://github.com/HugoBlox/kit/blob/main/CONTRIBUTING.md">Contributions welcome</a>.</p>

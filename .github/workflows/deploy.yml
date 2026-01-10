@@ -16,62 +16,55 @@ concurrency:
 
 jobs:
   build:
+    if: github.repository_owner != 'HugoBlox'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          submodules: recursive
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: "9.12.3"
+          version: '9'
 
-      - name: Install Tailwind v4
+      - name: Install dependencies
         run: |
-          set -euo pipefail
-          mkdir -p _tw
-          cd _tw
+          if [ -f "package.json" ]; then
+            pnpm install || npm install
+          fi
 
-          cat > package.json <<'JSON'
-          {
-            "name": "tw",
-            "private": true,
-            "devDependencies": {
-              "tailwindcss": "4.1.18"
-            }
-          }
-          JSON
-
-          pnpm install
-
-          # Make binaries available to Hugo
-          echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
+      - name: Get Hugo version
+        id: hugo-version
+        run: |
+          if [ -f "hugoblox.yaml" ]; then
+            VERSION=$(grep "hugo_version" hugoblox.yaml | awk '{print $2}' | tr -d "'\"")
+            echo "HUGO_VERSION=$VERSION" >> $GITHUB_ENV
+          else
+            echo "HUGO_VERSION=latest" >> $GITHUB_ENV
+          fi
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Hugo
+      - name: Build
         env:
           HUGO_ENVIRONMENT: production
           HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
         run: |
-          set -euo pipefail
-          hugo version
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
@@ -80,6 +73,7 @@ jobs:
           path: ./public
 
   deploy:
+    if: github.repository_owner != 'HugoBlox'
     needs: build
     runs-on: ubuntu-latest
     environment:

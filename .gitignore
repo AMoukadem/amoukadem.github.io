@@ -22,3 +22,5 @@ _site
 *.DS_Store
 _tw
 .sass-cache
+Gemfile
+_config.yml

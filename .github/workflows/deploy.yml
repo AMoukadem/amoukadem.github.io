@@ -34,9 +34,10 @@ jobs:
         with:
           version: '9.12.3'
 
-      - name: Install TailwindCSS CLI
+      # 🔴 THIS IS THE FIX
+      - name: Install Tailwind for Hugo (npx-compatible)
         run: |
-          npm install -g tailwindcss@latest
+          npm install -D tailwindcss@latest
 
       - name: Install dependencies
         run: |

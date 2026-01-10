@@ -30,14 +30,30 @@ jobs:
           node-version: "20"
 
       - name: Setup pnpm
-        if: hashFiles('package.json') != ''
         uses: pnpm/action-setup@v4
         with:
           version: "9.12.3"
 
-      - name: Install Tailwind CLI
+      # Create a minimal Tailwind toolchain without relying on the repo's (legacy) package.json
+      # HugoBlox commonly expects tailwindcss (often via npx) to be available during build.
+      - name: Prepare Tailwind toolchain
         run: |
-          pnpm add -g tailwindcss@latest
+          set -euo pipefail
+          mkdir -p _tw
+          cd _tw
+          cat > package.json <<'JSON'
+          {
+            "name": "tw",
+            "private": true,
+            "devDependencies": {
+              "tailwindcss": "3.4.17",
+              "postcss": "8.4.38",
+              "autoprefixer": "10.4.19"
+            }
+          }
+          JSON
+          pnpm install
+          echo "$(pwd)/node_modules/.bin" >> "$GITHUB_PATH"
           tailwindcss -v
 
       - name: Setup Hugo
@@ -50,10 +66,14 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build
+      - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
+          # Optional: if you have a HugoBlox license secret, keep it; otherwise it's harmless.
+          HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
         run: |
+          set -euo pipefail
+          hugo version
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact

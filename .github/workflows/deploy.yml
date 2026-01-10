@@ -29,12 +29,21 @@ jobs:
         with:
           node-version: "20"
 
-      # Install Tailwind CLI where Hugo expects it: ./node_modules/.bin/tailwindcss
-      - name: Install Tailwind CLI (v3) for Hugo
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: "9.12.3"
+
+      # ✅ FIX: Tailwind v4 CLI is @tailwindcss/cli (tailwindcss alone has no CLI)
+      - name: Install Tailwind v4 CLI (required by Hugo)
         run: |
-          npm ci --ignore-scripts || true
-          npm install -D tailwindcss@3.4.17 postcss autoprefixer
-          ./node_modules/.bin/tailwindcss --help > /dev/null
+          set -euo pipefail
+          # Install in repo root so npx + Hugo can find it
+          pnpm add -D tailwindcss@latest @tailwindcss/cli@latest @tailwindcss/typography@latest
+          # Debug: prove Hugo will find the binary
+          ls -la node_modules/.bin | sed -n '1,200p'
+          npx --no-install tailwindcss --help >/dev/null || true
+          npx --no-install @tailwindcss/cli --help >/dev/null || true
 
       - name: Get Hugo version
         run: |
@@ -60,6 +69,8 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
         run: |
+          set -euo pipefail
+          hugo version
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact

@@ -34,13 +34,12 @@ jobs:
         with:
           version: "9.12.3"
 
-      # Create a minimal Tailwind toolchain without relying on the repo's (legacy) package.json
-      # HugoBlox commonly expects tailwindcss (often via npx) to be available during build.
       - name: Prepare Tailwind toolchain
         run: |
           set -euo pipefail
           mkdir -p _tw
           cd _tw
+
           cat > package.json <<'JSON'
           {
             "name": "tw",
@@ -52,9 +51,14 @@ jobs:
             }
           }
           JSON
+
           pnpm install
-          echo "$(pwd)/node_modules/.bin" >> "$GITHUB_PATH"
-          tailwindcss -v
+
+          # Expose the binary directory
+          echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
+
+          # Sanity check
+          ./node_modules/.bin/tailwindcss -v
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -69,7 +73,6 @@ jobs:
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
-          # Optional: if you have a HugoBlox license secret, keep it; otherwise it's harmless.
           HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
         run: |
           set -euo pipefail
@@ -91,3 +94,4 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+

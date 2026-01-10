@@ -34,7 +34,7 @@ jobs:
         with:
           version: "9.12.3"
 
-      - name: Prepare Tailwind v4 toolchain
+      - name: Install Tailwind v4
         run: |
           set -euo pipefail
           mkdir -p _tw
@@ -52,8 +52,8 @@ jobs:
 
           pnpm install
 
-          # Sanity check (pnpm resolves the binary)
-          pnpm exec tailwindcss --help > /dev/null
+          # Make binaries available to Hugo
+          echo "$(pwd)/node_modules/.bin" >> $GITHUB_PATH
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3

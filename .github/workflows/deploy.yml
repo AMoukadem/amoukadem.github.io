@@ -51,9 +51,9 @@ jobs:
           JSON
 
           pnpm install
-          echo "$PWD/node_modules/.bin" >> $GITHUB_PATH
 
-          ./node_modules/.bin/tailwindcss --help > /dev/null
+          # Sanity check (pnpm resolves the binary)
+          pnpm exec tailwindcss --help > /dev/null
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3

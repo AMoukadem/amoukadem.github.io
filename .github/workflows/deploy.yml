@@ -33,12 +33,12 @@ jobs:
         if: hashFiles('package.json') != ''
         uses: pnpm/action-setup@v4
         with:
-        version: '9.12.3'
+          version: "9.12.3"
 
-
-      # Install Tailwind CLI so Hugo can call it (HugoBlox uses it to build CSS)
       - name: Install Tailwind CLI
-        run: pnpm add -g tailwindcss@latest
+        run: |
+          pnpm add -g tailwindcss@latest
+          tailwindcss -v
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -54,7 +54,6 @@ jobs:
         env:
           HUGO_ENVIRONMENT: production
         run: |
-          tailwindcss -v
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
@@ -72,4 +71,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-

@@ -18,3 +18,9 @@ package-lock.json
 
 # Ignore folders related to IDEs
 .vscode/
+_site
+*.DS_Store
+_tw
+.sass-cache
+Gemfile
+_config.yml

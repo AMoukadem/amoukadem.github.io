@@ -27,26 +27,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: '9.12.3'
-
-      # 🔴 THIS IS THE FIX
-      - name: Install Tailwind for Hugo (npx-compatible)
+      # Install Tailwind CLI where Hugo expects it: ./node_modules/.bin/tailwindcss
+      - name: Install Tailwind CLI (v3) for Hugo
         run: |
-          npm install -D tailwindcss@latest
-
-      - name: Install dependencies
-        run: |
-          if [ -f "package.json" ]; then
-            pnpm install || npm install
-          fi
+          npm ci --ignore-scripts || true
+          npm install -D tailwindcss@3.4.17 postcss autoprefixer
+          ./node_modules/.bin/tailwindcss --help > /dev/null
 
       - name: Get Hugo version
-        id: hugo-version
         run: |
           if [ -f "hugoblox.yaml" ]; then
             VERSION=$(grep "hugo_version" hugoblox.yaml | awk '{print $2}' | tr -d "'\"")

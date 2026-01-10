@@ -1,1 +1,92 @@
-# (colle ici le fichier ci-dessus)
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # pnpm version must be defined only once (either here OR in package.json "packageManager")
+      # You already have "packageManager": "pnpm@9.12.3" in package.json, so DON'T set version here.
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install Node deps (Tailwind v4 CLI)
+        run: |
+          set -euo pipefail
+          # Install deps declared in package.json (should include: tailwindcss, @tailwindcss/cli, @tailwindcss/typography)
+          pnpm install --frozen-lockfile || pnpm install
+          # Prove CLI exists
+          ls -la node_modules/.bin | grep -E "tailwind|postcss" || true
+          npx --no-install tailwindcss --help >/dev/null
+
+      - name: Get Hugo version
+        id: hugo
+        run: |
+          set -euo pipefail
+          if [ -f "hugoblox.yaml" ]; then
+            VERSION=$(grep -E "hugo_version" hugoblox.yaml | awk '{print $2}' | tr -d "'\"")
+            if [ -n "$VERSION" ]; then
+              echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          echo "version=latest" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ steps.hugo.outputs.version }}
+          extended: true
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_BLOX_LICENSE: ${{ secrets.HUGO_BLOX_LICENSE }}
+        run: |
+          set -euo pipefail
+          hugo version
+          hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

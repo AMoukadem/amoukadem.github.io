@@ -34,6 +34,10 @@ jobs:
         with:
           version: '9.12.3'
 
+      - name: Install TailwindCSS CLI
+        run: |
+          npm install -g tailwindcss@latest
+
       - name: Install dependencies
         run: |
           if [ -f "package.json" ]; then

@@ -1,22 +1,18 @@
 ---
-title: "Projet 1 — [titre court]"
-summary: "1 phrase sur l’objectif du projet."
+title: "Projet 1 — Titre clair"
+summary: "Une phrase simple qui explique le projet."
 date: 2026-01-01
 tags: ["EDP", "Optimisation"]
 ---
 
 ## Résumé
-3–6 lignes max. Pas un roman.
+4–6 lignes, claires.
 
 ## Résultats / contributions
 - Point 1
 - Point 2
 - Point 3
 
-## Collaborateurs
-- Nom, institution
-
 ## Liens
 - Papier : …
 - Code : …
-- Slides : …

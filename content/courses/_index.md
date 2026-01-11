@@ -1,28 +1,22 @@
 ---
-title: Courses
-summary: My courses
+title: Enseignement
 type: landing
-
-cascade:
-  - target:
-      path: '{/courses/*/**}'
-    type: docs
-    params:
-      show_breadcrumb: true
-
 sections:
-  - block: collection
-    id: courses
+  - block: markdown
     content:
-      title: Courses
-      filters:
-        tag: Course
-        kinds:
-          - section
+      title: Cours
+      text: |
+        Ici je regroupe mes cours par page (plan + ressources).
     design:
-      view: article-grid
-      show_read_time: false
-      show_date: false
-      show_read_more: false
-      columns: 1
+      columns: "1"
+
+  - block: collection
+    content:
+      title: Liste des cours
+      filters:
+        folders:
+          - courses
+      count: 50
+    design:
+      view: card
 ---

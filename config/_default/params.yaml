@@ -1,42 +1,32 @@
 hugoblox:
   schema: "2.0"
-  identity:
-    name: Dr. HDR Ali Moukadem
-    type: person
-    tagline: Associate Professor (HDR), nstitute of Research in Informatics, Mathematics, Signal and Automatic (IRIMAS), University of Haute-Alsace., Mulhouse, France.
-    description: ""
+
   theme:
-    mode: system
-    pack: marine
+    mode: light        # ou system si tu veux un dark auto
+    pack: "minimal"    # propre, académique
+
     colors:
-      primary: ""
-      secondary: ""
-      neutral: ""
+      primary: "#007EE3"   # approx de ton myBlue (cmyk 1,.50,.10,.01)
+      secondary: "#005596" # uhaBlue
+      neutral: "slate"     # gamme de gris nette
+
+    # Optionnel si tu veux verrouiller le fond “papier”
+    surfaces:
+      background: "#ffffff"
+      foreground: "#0b0f14"  # pas noir pur -> plus élégant
+      header:
+        background: "#ffffff"
+        foreground: "#0b0f14"
+      footer:
+        background: "#ffffff"
+        foreground: "#0b0f14"
+
   typography:
-    font: sans
-    size: md
+    font: "serif"  # ambiance académique globale
+    size: "md"
+
   layout:
-    radius: md
-    spacing: comfortable
+    radius: "md"          # coins arrondis façon “rounded”
+    spacing: "comfortable"
     avatar_shape: circle
-  header:
-    enable: true
-    style: navbar
-    sticky: true
-    align: center
-    search: true
-    theme_toggle: true
-  footer:
-    style: minimal
-    language_switcher: true
-  copyright:
-    notice: © {year} {name}
-  content:
-    math:
-      enable: false
-    toc:
-      enable: true
-    reading_time:
-      enable: true
-  search:
-    enable: true
+

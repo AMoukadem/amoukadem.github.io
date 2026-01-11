@@ -10,15 +10,13 @@ jobs:
   fix:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Enable pnpm (corepack)
+      - name: Enable pnpm
         run: |
           corepack enable
           corepack prepare pnpm@latest --activate
@@ -27,12 +25,11 @@ jobs:
       - name: Regenerate lockfile
         run: pnpm install --no-frozen-lockfile
 
-      - name: Commit lockfile if changed
+      - name: Commit & push lockfile
         run: |
-          git status
           git add pnpm-lock.yaml
           if git diff --cached --quiet; then
-            echo "No lockfile changes."
+            echo "No changes to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"

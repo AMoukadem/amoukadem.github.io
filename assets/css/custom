@@ -1,52 +1,207 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap");
+/* =========================================================
+   HugoBlox — Academic (Beamer-inspired) light theme
+   - Headings: EB Garamond
+   - Body: Source Sans 3 (close to Source Sans Pro)
+   - White background, HDR-ish blue accents
+   - Thin rules under headings
+   - Flat, readable cards (minimal shadow)
+   - Theorem/definition-like callouts
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap");
 
 :root{
-  --myBlue: #007EE3;
-  --uhaBlue: #005596;
-  --uhaGray: #5a5a5a;
-  --lightblue: #E6F5FF;
+  /* Color system (close to your Beamer) */
+  --myBlue: #007EE3;      /* accent */
+  --uhaBlue: #005596;     /* deeper blue */
+  --uhaGray: #5a5a5a;     /* gray text */
+  --paper: #ffffff;       /* background */
+  --ink: rgba(0,0,0,.88); /* main text */
+  --muted: rgba(0,0,0,.62);
+  --rule: rgba(0,0,0,.12);
 
+  /* Light fills */
+  --lightblue: #E6F5FF;   /* your lightblue */
+  --lightgray: rgba(0,0,0,.03);
+
+  /* Fonts */
   --font-body: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-heading: "EB Garamond", Georgia, "Times New Roman", Times, serif;
+
+  /* Geometry */
+  --radius: 14px;
 }
 
-body{
+/* ===== Base ===== */
+html, body{
+  background: var(--paper) !important;
+  color: var(--ink);
   font-family: var(--font-body);
-  color: rgba(0,0,0,.88);
-  background: #fff;
+  letter-spacing: 0.1px;
 }
 
+/* Headings: serif, slightly tighter */
 h1,h2,h3,h4,h5,h6,
 .navbar, .hero-title{
-  font-family: var(--font-heading);
+  font-family: var(--font-heading) !important;
+  letter-spacing: 0.2px;
+  color: rgba(0,0,0,.86);
 }
 
-/* Ligne fine sous les titres (style "frametitle + hrule") */
+/* Modern “academic” scale: readable on screen */
+h1{ font-weight: 650; }
+h2{ font-weight: 600; }
+h3,h4,h5,h6{ font-weight: 550; }
+
+/* Thin rule under major headings (frametitle + hrule vibe) */
 h2{
-  padding-bottom: .25rem;
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  padding-bottom: .28rem;
+  border-bottom: 1px solid var(--rule);
+  margin-top: 2.0rem;
 }
 
-/* Liens */
+/* Links: blue structure */
 a{
   color: var(--myBlue);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
-a:hover{ text-decoration-thickness: 2px; }
+a:hover{
+  text-decoration-thickness: 2px;
+}
 
-/* Listes: marqueur gris */
-ul li::marker{ color: rgba(0,0,0,.40); }
+/* Lists: gray markers */
+ul li::marker, ol li::marker{
+  color: rgba(0,0,0,.40);
+}
 
-/* Callouts façon blocs (théorème/définition) */
+/* Code blocks: clean, not neon */
+pre, code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+pre{
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(0,0,0,.02);
+}
+
+/* ===== Navbar / footer ===== */
+.navbar, .site-header{
+  background: var(--paper) !important;
+  border-bottom: 1px solid rgba(0,0,0,.07);
+}
+.navbar a{
+  text-decoration: none;
+}
+.navbar a:hover{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* ===== Reduce “template-y” shadows; keep minimal depth ===== */
+.card, .wg, .article, .view-list-item, .view-card,
+.listing-item, .project-card, .publication, .talk, .course{
+  border-radius: var(--radius) !important;
+}
+
+/* If the theme uses strong shadows, soften them */
+.card, .article, .view-card, .project-card{
+  box-shadow: 0 2px 10px rgba(0,0,0,.06) !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  background: var(--paper) !important;
+}
+
+/* Buttons: clean, academic */
+.btn, button, .button{
+  border-radius: 999px !important;
+  border: 1px solid rgba(0,0,0,.12) !important;
+  box-shadow: none !important;
+}
+.btn-primary, .btn.btn-primary{
+  background: var(--myBlue) !important;
+  border-color: rgba(0,0,0,.0) !important;
+  color: white !important;
+}
+.btn-primary:hover{
+  filter: brightness(0.95);
+}
+
+/* ===== Hero block: make it “paper + line” rather than marketing ===== */
+.hero, .wg-hero{
+  background: var(--paper) !important;
+}
+.hero .hero-lead, .wg-hero .hero-lead{
+  color: rgba(0,0,0,.72);
+  font-family: var(--font-body);
+}
+
+/* Add subtle rule under hero title (optional but nice) */
+.hero-title, .wg-hero .hero-title{
+  position: relative;
+  padding-bottom: .35rem;
+}
+.hero-title::after, .wg-hero .hero-title::after{
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--rule);
+  margin-top: .25rem;
+  width: 100%;
+}
+
+/* ===== Callouts -> theorem/definition style ===== */
+/* HugoBlox callouts usually have .callout; we style it like your TikZ boxes */
 .callout{
-  border-radius: 10px;
-  border: 1px solid rgba(0,126,227,.55);
-  background: rgba(230,245,255,.85);
-  box-shadow: none;
+  border-radius: var(--radius) !important;
+  border: 1px solid rgba(0,126,227,.55) !important;
+  background: rgba(230,245,255,.80) !important;
+  box-shadow: none !important;
+  padding: 1rem 1.1rem !important;
 }
 .callout .callout-title{
+  font-family: var(--font-heading) !important;
+  font-weight: 650 !important;
+  color: var(--myBlue) !important;
+}
+.callout .callout-content, .callout .callout-body{
+  color: rgba(0,0,0,.84);
+}
+
+/* Definition-like (light gray) */
+.callout[data-callout="info"],
+.callout[data-callout="tip"]{
+  background: var(--lightgray) !important;
+  border-color: rgba(0,126,227,.45) !important;
+}
+
+/* Warning: keep blue border but stronger */
+.callout[data-callout="warning"]{
+  border-width: 2px !important;
+}
+
+/* ===== Tables: academic ===== */
+table{
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+th, td{
+  padding: .65rem .75rem;
+  border-bottom: 1px solid rgba(0,0,0,.07);
+}
+th{
   font-family: var(--font-heading);
-  font-weight: 600;
-  color: var(--myBlue);
+  font-weight: 650;
+  background: rgba(0,0,0,.02);
+}
+
+/* ===== Small typography tweaks ===== */
+p{
+  line-height: 1.55;
+}
+small, .small{
+  color: var(--muted);
 }

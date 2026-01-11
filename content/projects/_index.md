@@ -1,15 +1,24 @@
 ---
 title: Recherche
 type: landing
+sections:
+  - block: markdown
+    content:
+      title: Axes
+      text: |
+        - Axe 1 : …
+        - Axe 2 : …
+        - Axe 3 : …
+    design:
+      columns: "1"
+
+  - block: collection
+    content:
+      title: Projets
+      filters:
+        folders:
+          - projects
+      count: 50
+    design:
+      view: card
 ---
-
-## Axes
-
-- **Axe 1 :** une phrase claire sur ce que tu fais et pourquoi.
-- **Axe 2 :** idem.
-- **Axe 3 :** optionnel.
-
-## Projets
-
-Tu peux créer des projets individuels ici : `content/projects/mon-projet/`  
-Avec un `index.md` dedans (je te mets un modèle ci-dessous).

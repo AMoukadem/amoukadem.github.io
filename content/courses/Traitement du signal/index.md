@@ -1,5 +1,5 @@
 ---
-title: "Analyse L3"
+title: "Traitement du signal"
 summary: "Séries, intégrales, espaces métriques — 2025–2026."
 date: 2025-09-01
 tags: ["L3", "Analyse"]
@@ -10,11 +10,6 @@ tags: ["L3", "Analyse"]
 - **Organisation :** CM + TD
 - **Évaluation :** …
 
-## Plan
-1. …
-2. …
-3. …
-
 ## Ressources
 - Polycopié : `uploads/analyse-l3.pdf`
-- Feuilles de TD : `uploads/td-analyse-l3.pdf`
+- TD : `uploads/td-analyse-l3.pdf`

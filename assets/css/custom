@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap");
+
+:root{
+  --myBlue: #007EE3;
+  --uhaBlue: #005596;
+  --uhaGray: #5a5a5a;
+  --lightblue: #E6F5FF;
+
+  --font-body: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-heading: "EB Garamond", Georgia, "Times New Roman", Times, serif;
+}
+
+body{
+  font-family: var(--font-body);
+  color: rgba(0,0,0,.88);
+  background: #fff;
+}
+
+h1,h2,h3,h4,h5,h6,
+.navbar, .hero-title{
+  font-family: var(--font-heading);
+}
+
+/* Ligne fine sous les titres (style "frametitle + hrule") */
+h2{
+  padding-bottom: .25rem;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+/* Liens */
+a{
+  color: var(--myBlue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover{ text-decoration-thickness: 2px; }
+
+/* Listes: marqueur gris */
+ul li::marker{ color: rgba(0,0,0,.40); }
+
+/* Callouts façon blocs (théorème/définition) */
+.callout{
+  border-radius: 10px;
+  border: 1px solid rgba(0,126,227,.55);
+  background: rgba(230,245,255,.85);
+  box-shadow: none;
+}
+.callout .callout-title{
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--myBlue);
+}

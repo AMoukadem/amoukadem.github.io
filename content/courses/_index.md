@@ -6,7 +6,7 @@ sections:
     content:
       title: Cours
       text: |
-        Ici je regroupe mes cours par page (plan + ressources).
+        Cours et ressources (plans, polycopiés, TD).
     design:
       columns: "1"
 

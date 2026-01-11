@@ -29,16 +29,23 @@ jobs:
         with:
           node-version: "20"
 
-      # pnpm version must be defined only once (either here OR in package.json "packageManager")
-      # You already have "packageManager": "pnpm@9.12.3" in package.json, so DON'T set version here.
+      # pnpm version should be defined only once:
+      # You already have "packageManager": "pnpm@9.12.3" in package.json
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
       - name: Install Node deps (Tailwind v4 CLI)
         run: |
           set -euo pipefail
-          # Install deps declared in package.json (should include: tailwindcss, @tailwindcss/cli, @tailwindcss/typography)
-          pnpm install --frozen-lockfile || pnpm install
+
+          # Try reproducible install first. If lockfile mismatched, fall back to non-frozen.
+          if pnpm install --frozen-lockfile; then
+            echo "Installed with frozen lockfile."
+          else
+            echo "ERR: pnpm-lock.yaml does not match package.json -> installing without frozen lockfile."
+            pnpm install --no-frozen-lockfile
+          fi
+
           # Prove CLI exists
           ls -la node_modules/.bin | grep -E "tailwind|postcss" || true
           npx --no-install tailwindcss --help >/dev/null

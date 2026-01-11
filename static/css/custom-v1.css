@@ -56,4 +56,98 @@ a:hover{ text-decoration-thickness:2px; }
 
 /* Lists marker */
 ul li::marker, ol li::marker{
-  color:
+  color: rgba(0,0,0,.40);
+}
+
+/* Navbar */
+.navbar, .site-header{
+  background:var(--paper)!important;
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+.navbar a{ text-decoration:none; }
+.navbar a:hover{
+  text-decoration:underline;
+  text-decoration-thickness:2px;
+}
+
+/* Cards: subtle, academic */
+.card, .article, .view-card, .project-card,
+.listing-item, .view-list-item{
+  background:var(--paper)!important;
+  border:1px solid rgba(0,0,0,.10)!important;
+  border-radius:var(--radius)!important;
+  box-shadow:0 2px 12px rgba(0,0,0,.06)!important;
+}
+
+/* Buttons */
+.btn, button, .button{
+  border-radius:999px!important;
+  border:1px solid rgba(0,0,0,.12)!important;
+  box-shadow:none!important;
+}
+.btn-primary, .btn.btn-primary{
+  background:var(--myBlue)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+}
+.btn-primary:hover{ filter:brightness(.95); }
+
+/* Hero: underline like frametitle */
+.hero-title, .wg-hero .hero-title{
+  position:relative;
+  padding-bottom:.35rem;
+}
+.hero-title::after, .wg-hero .hero-title::after{
+  content:"";
+  display:block;
+  height:1px;
+  background:var(--rule);
+  margin-top:.25rem;
+  width:100%;
+}
+
+/* Callouts -> theorem/definition vibe */
+.callout{
+  border-radius:var(--radius)!important;
+  border:1px solid rgba(0,126,227,.55)!important;
+  background:rgba(230,245,255,.80)!important;
+  box-shadow:none!important;
+  padding:1rem 1.1rem!important;
+}
+.callout .callout-title{
+  font-family:var(--font-heading)!important;
+  font-weight:700!important;
+  color:var(--myBlue)!important;
+}
+.callout[data-callout="info"],
+.callout[data-callout="tip"]{
+  background:var(--lightgray)!important;
+  border-color:rgba(0,126,227,.45)!important;
+}
+
+/* Code blocks */
+pre{
+  border-radius:var(--radius);
+  border:1px solid rgba(0,0,0,.08);
+  background:rgba(0,0,0,.02);
+}
+
+/* Tables */
+table{
+  border-collapse:separate;
+  border-spacing:0;
+  width:100%;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+th, td{
+  padding:.65rem .75rem;
+  border-bottom:1px solid rgba(0,0,0,.07);
+}
+th{
+  font-family:var(--font-heading);
+  font-weight:700;
+  background:rgba(0,0,0,.02);
+}
+

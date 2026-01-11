@@ -1,45 +1,59 @@
-/* =========================================================
-   HugoBlox — Academic (Beamer-inspired) light theme (B)
-   ========================================================= */
-
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap");
 
 :root{
-  --myBlue: #007EE3;
-  --uhaBlue: #005596;
-  --uhaGray: #5a5a5a;
+  --myBlue:#007EE3;
+  --uhaGray:#5a5a5a;
 
-  --paper: #ffffff;
+  --paper:#ffffff;
   --ink: rgba(0,0,0,.88);
-  --muted: rgba(0,0,0,.62);
+  --muted: rgba(0,0,0,.66);
   --rule: rgba(0,0,0,.12);
 
-  --lightblue: #E6F5FF;
+  --lightblue:#E6F5FF;
   --lightgray: rgba(0,0,0,.03);
 
-  --font-body: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-heading: "EB Garamond", Georgia, "Times New Roman", Times, serif;
+  --radius:14px;
 
-  --radius: 14px;
+  --font-body:"Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-heading:"EB Garamond", Georgia, "Times New Roman", Times, serif;
 }
 
 /* Base */
 html, body{
-  background: var(--paper) !important;
-  color: var(--ink);
-  font-family: var(--font-body);
-  letter-spacing: 0.1px;
+  background:var(--paper)!important;
+  color:var(--ink);
+  font-family:var(--font-body);
+  letter-spacing:.1px;
 }
+p{ line-height:1.58; }
+small,.small{ color:var(--muted); }
 
 /* Headings */
 h1,h2,h3,h4,h5,h6,
 .navbar, .hero-title{
-  font-family: var(--font-heading) !important;
-  letter-spacing: 0.2px;
-  color: rgba(0,0,0,.86);
+  font-family:var(--font-heading)!important;
+  letter-spacing:.2px;
+  color:rgba(0,0,0,.86);
+}
+h1{ font-weight:700; }
+h2{ font-weight:650; }
+h3,h4,h5,h6{ font-weight:600; }
+
+/* Beamer-like thin rule */
+h2{
+  padding-bottom:.28rem;
+  border-bottom:1px solid var(--rule);
+  margin-top:2.0rem;
 }
 
-h1{ font-weight: 650; }
-h2{ font-weight: 600; }
-h3,h4,h5,h6{ font
+/* Links */
+a{
+  color:var(--myBlue);
+  text-underline-offset:2px;
+  text-decoration-thickness:1px;
+}
+a:hover{ text-decoration-thickness:2px; }
 
+/* Lists marker */
+ul li::marker, ol li::marker{
+  color:

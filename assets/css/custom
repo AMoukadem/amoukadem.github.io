@@ -1,3 +1,5 @@
+body { background: #ff00ff !important; }
+
 /* =========================================================
    HugoBlox — Academic (Beamer-inspired) light theme
    - Headings: EB Garamond

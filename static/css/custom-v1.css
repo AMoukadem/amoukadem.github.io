@@ -1,18 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap");
 
 :root{
   --myBlue:#007EE3;
-  --uhaGray:#5a5a5a;
-
-  --paper:#ffffff;
   --ink: rgba(0,0,0,.88);
-  --muted: rgba(0,0,0,.66);
-  --rule: rgba(0,0,0,.12);
-
-  --lightblue:#E6F5FF;
-  --lightgray: rgba(0,0,0,.03);
-
-  --radius:14px;
+  --muted: rgba(0,0,0,.68);
+  --rule: rgba(0,0,0,.16);
+  --paper:#ffffff;
+  --radius:10px;
 
   --font-body:"Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-heading:"EB Garamond", Georgia, "Times New Roman", Times, serif;
@@ -23,106 +17,119 @@ html, body{
   background:var(--paper)!important;
   color:var(--ink);
   font-family:var(--font-body);
-  letter-spacing:.1px;
+  letter-spacing:.05px;
 }
-p{ line-height:1.58; }
-small,.small{ color:var(--muted); }
+
+p{
+  line-height:1.5;
+  color:var(--ink);
+}
+
+small,.small{
+  color:var(--muted);
+}
 
 /* Headings */
 h1,h2,h3,h4,h5,h6,
 .navbar, .hero-title{
   font-family:var(--font-heading)!important;
-  letter-spacing:.2px;
-  color:rgba(0,0,0,.86);
+  letter-spacing:.3px;
+  color:rgba(0,0,0,.90);
 }
+
 h1{ font-weight:700; }
 h2{ font-weight:650; }
 h3,h4,h5,h6{ font-weight:600; }
 
-/* Beamer-like thin rule */
+/* Ligne fine type Beamer */
 h2{
-  padding-bottom:.28rem;
+  padding-bottom:.25rem;
   border-bottom:1px solid var(--rule);
-  margin-top:2.0rem;
+  margin-top:2rem;
 }
 
-/* Links */
+/* Liens */
 a{
   color:var(--myBlue);
-  text-underline-offset:2px;
   text-decoration-thickness:1px;
+  text-underline-offset:2px;
 }
-a:hover{ text-decoration-thickness:2px; }
-
-/* Lists marker */
-ul li::marker, ol li::marker{
-  color: rgba(0,0,0,.40);
+a:hover{
+  text-decoration-thickness:2px;
 }
 
-/* Navbar */
-.navbar, .site-header{
-  background:var(--paper)!important;
+/* Navbar sobre */
+.navbar{
+  background:#fff!important;
   border-bottom:1px solid rgba(0,0,0,.08);
+  padding-top:.5rem!important;
+  padding-bottom:.5rem!important;
 }
-.navbar a{ text-decoration:none; }
+
+.navbar a{
+  text-decoration:none;
+}
 .navbar a:hover{
   text-decoration:underline;
   text-decoration-thickness:2px;
 }
 
-/* Cards: subtle, academic */
-.card, .article, .view-card, .project-card,
-.listing-item, .view-list-item{
-  background:var(--paper)!important;
-  border:1px solid rgba(0,0,0,.10)!important;
-  border-radius:var(--radius)!important;
-  box-shadow:0 2px 12px rgba(0,0,0,.06)!important;
+/* HERO = compact, académique */
+.wg-hero, .hero{
+  min-height:auto!important;
+  padding-top:2.5rem!important;
+  padding-bottom:2.5rem!important;
 }
 
-/* Buttons */
-.btn, button, .button{
-  border-radius:999px!important;
-  border:1px solid rgba(0,0,0,.12)!important;
-  box-shadow:none!important;
+.hero-title{
+  margin-top:0!important;
+  font-weight:700!important;
+  letter-spacing:.4px!important;
 }
-.btn-primary, .btn.btn-primary{
-  background:var(--myBlue)!important;
-  color:#fff!important;
-  border-color:transparent!important;
-}
-.btn-primary:hover{ filter:brightness(.95); }
 
-/* Hero: underline like frametitle */
-.hero-title, .wg-hero .hero-title{
-  position:relative;
-  padding-bottom:.35rem;
-}
-.hero-title::after, .wg-hero .hero-title::after{
+.hero-title::after{
   content:"";
   display:block;
   height:1px;
   background:var(--rule);
-  margin-top:.25rem;
+  margin-top:.3rem;
   width:100%;
 }
 
-/* Callouts -> theorem/definition vibe */
-.callout{
+/* Boutons = liens stylés */
+.btn-primary, .btn.btn-primary{
+  background:transparent!important;
+  color:var(--myBlue)!important;
+  border:1.2px solid var(--myBlue)!important;
+  border-radius:999px!important;
+}
+
+.btn-primary:hover{
+  background:rgba(0,126,227,.05)!important;
+}
+
+/* Cards = plates, pas marketing */
+.card, .article, .view-card, .project-card,
+.listing-item, .view-list-item{
+  background:#fff!important;
+  border:1px solid rgba(0,0,0,.12)!important;
   border-radius:var(--radius)!important;
+  box-shadow:none!important;
+}
+
+/* Callouts = blocs type théorème */
+.callout{
   border:1px solid rgba(0,126,227,.55)!important;
-  background:rgba(230,245,255,.80)!important;
+  background:rgba(230,245,255,.75)!important;
+  border-radius:var(--radius)!important;
   box-shadow:none!important;
   padding:1rem 1.1rem!important;
 }
+
 .callout .callout-title{
   font-family:var(--font-heading)!important;
   font-weight:700!important;
   color:var(--myBlue)!important;
-}
-.callout[data-callout="info"],
-.callout[data-callout="tip"]{
-  background:var(--lightgray)!important;
-  border-color:rgba(0,126,227,.45)!important;
 }
 
 /* Code blocks */
@@ -142,7 +149,7 @@ table{
   overflow:hidden;
 }
 th, td{
-  padding:.65rem .75rem;
+  padding:.6rem .7rem;
   border-bottom:1px solid rgba(0,0,0,.07);
 }
 th{
@@ -150,4 +157,3 @@ th{
   font-weight:700;
   background:rgba(0,0,0,.02);
 }
-

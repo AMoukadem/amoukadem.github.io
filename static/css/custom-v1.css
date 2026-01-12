@@ -1,159 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap");
+/* =========================
+   Force overrides (HugoBlox)
+   ========================= */
 
-:root{
-  --myBlue:#007EE3;
-  --ink: rgba(0,0,0,.88);
-  --muted: rgba(0,0,0,.68);
-  --rule: rgba(0,0,0,.16);
-  --paper:#ffffff;
-  --radius:10px;
-
-  --font-body:"Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --font-heading:"EB Garamond", Georgia, "Times New Roman", Times, serif;
-}
-
-/* Base */
-html, body{
-  background:var(--paper)!important;
-  color:var(--ink);
-  font-family:var(--font-body);
-  letter-spacing:.05px;
+/* 1) Hero: supprimer le gigantesque padding / min-height imposés par le thème */
+section.wg-hero,
+section.hero,
+.wg-hero,
+.hero {
+  min-height: auto !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
-p{
-  line-height:1.5;
-  color:var(--ink);
+/* Certains thèmes mettent une hauteur via des wrappers */
+.wg-hero .wg-hero-content,
+.wg-hero .row,
+.wg-hero .col,
+.hero .row,
+.hero .col {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-small,.small{
-  color:var(--muted);
+/* 2) Titre hero + underline bien visibles */
+.wg-hero h1,
+.hero h1,
+.hero-title {
+  margin-top: 0 !important;
+  margin-bottom: .6rem !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  letter-spacing: .4px !important;
 }
 
-/* Headings */
-h1,h2,h3,h4,h5,h6,
-.navbar, .hero-title{
-  font-family:var(--font-heading)!important;
-  letter-spacing:.3px;
-  color:rgba(0,0,0,.90);
+.wg-hero h1::after,
+.hero h1::after,
+.hero-title::after {
+  content: "" !important;
+  display: block !important;
+  height: 1px !important;
+  background: var(--rule) !important;
+  margin-top: .35rem !important;
+  width: 100% !important;
 }
 
-h1{ font-weight:700; }
-h2{ font-weight:650; }
-h3,h4,h5,h6{ font-weight:600; }
-
-/* Ligne fine type Beamer */
-h2{
-  padding-bottom:.25rem;
-  border-bottom:1px solid var(--rule);
-  margin-top:2rem;
+/* 3) Boutons: enlever tout fond/ombre bootstrap-like */
+.wg-hero .btn,
+.hero .btn,
+.btn {
+  box-shadow: none !important;
 }
 
-/* Liens */
-a{
-  color:var(--myBlue);
-  text-decoration-thickness:1px;
-  text-underline-offset:2px;
-}
-a:hover{
-  text-decoration-thickness:2px;
+.wg-hero .btn-primary,
+.hero .btn-primary,
+.btn-primary {
+  background: transparent !important;
+  color: var(--myBlue) !important;
+  border: 1.2px solid var(--myBlue) !important;
 }
 
-/* Navbar sobre */
-.navbar{
-  background:#fff!important;
-  border-bottom:1px solid rgba(0,0,0,.08);
-  padding-top:.5rem!important;
-  padding-bottom:.5rem!important;
+/* 4) Cards: certains thèmes utilisent .card-body et ajoutent shadow ailleurs */
+.card,
+.card * {
+  box-shadow: none !important;
+}
+.card {
+  border: 1px solid rgba(0,0,0,.12) !important;
+  border-radius: var(--radius) !important;
+  background: #fff !important;
 }
 
-.navbar a{
-  text-decoration:none;
-}
-.navbar a:hover{
-  text-decoration:underline;
-  text-decoration-thickness:2px;
+/* 5) Largeur du contenu: plus “page académique” (évite effet landing très large) */
+.container, .page-body, main .container {
+  max-width: 980px !important;
 }
 
-/* HERO = compact, académique */
-.wg-hero, .hero{
-  min-height:auto!important;
-  padding-top:2.5rem!important;
-  padding-bottom:2.5rem!important;
-}
-
-.hero-title{
-  margin-top:0!important;
-  font-weight:700!important;
-  letter-spacing:.4px!important;
-}
-
-.hero-title::after{
-  content:"";
-  display:block;
-  height:1px;
-  background:var(--rule);
-  margin-top:.3rem;
-  width:100%;
-}
-
-/* Boutons = liens stylés */
-.btn-primary, .btn.btn-primary{
-  background:transparent!important;
-  color:var(--myBlue)!important;
-  border:1.2px solid var(--myBlue)!important;
-  border-radius:999px!important;
-}
-
-.btn-primary:hover{
-  background:rgba(0,126,227,.05)!important;
-}
-
-/* Cards = plates, pas marketing */
-.card, .article, .view-card, .project-card,
-.listing-item, .view-list-item{
-  background:#fff!important;
-  border:1px solid rgba(0,0,0,.12)!important;
-  border-radius:var(--radius)!important;
-  box-shadow:none!important;
-}
-
-/* Callouts = blocs type théorème */
-.callout{
-  border:1px solid rgba(0,126,227,.55)!important;
-  background:rgba(230,245,255,.75)!important;
-  border-radius:var(--radius)!important;
-  box-shadow:none!important;
-  padding:1rem 1.1rem!important;
-}
-
-.callout .callout-title{
-  font-family:var(--font-heading)!important;
-  font-weight:700!important;
-  color:var(--myBlue)!important;
-}
-
-/* Code blocks */
-pre{
-  border-radius:var(--radius);
-  border:1px solid rgba(0,0,0,.08);
-  background:rgba(0,0,0,.02);
-}
-
-/* Tables */
-table{
-  border-collapse:separate;
-  border-spacing:0;
-  width:100%;
-  border:1px solid rgba(0,0,0,.10);
-  border-radius:var(--radius);
-  overflow:hidden;
-}
-th, td{
-  padding:.6rem .7rem;
-  border-bottom:1px solid rgba(0,0,0,.07);
-}
-th{
-  font-family:var(--font-heading);
-  font-weight:700;
-  background:rgba(0,0,0,.02);
+/* 6) Réduire les espaces verticaux des sections (trop “marketing”) */
+section {
+  padding-top: 2.25rem !important;
+  padding-bottom: 2.25rem !important;
 }

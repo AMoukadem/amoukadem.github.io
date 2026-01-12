@@ -1,40 +1,43 @@
 /* =========================
-   Force overrides (HugoBlox)
+   HERO FIX — academic style
    ========================= */
 
-/* 1) Hero: supprimer le gigantesque padding / min-height imposés par le thème */
 section.wg-hero,
-section.hero,
 .wg-hero,
 .hero {
-  min-height: auto !important;
+  min-height: unset !important;
+  height: auto !important;
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
 }
 
-/* Certains thèmes mettent une hauteur via des wrappers */
-.wg-hero .wg-hero-content,
+/* Certains layouts utilisent un wrapper interne */
+.wg-hero .container,
 .wg-hero .row,
-.wg-hero .col,
-.hero .row,
-.hero .col {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
+.wg-hero .col {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
-/* 2) Titre hero + underline bien visibles */
+/* Le thème met parfois un spacer invisible */
+.wg-hero::before,
+.wg-hero::after {
+  display: none !important;
+}
+
+/* Titre */
 .wg-hero h1,
 .hero h1,
 .hero-title {
   margin-top: 0 !important;
-  margin-bottom: .6rem !important;
-  font-family: var(--font-heading) !important;
+  margin-bottom: 0.6rem !important;
   font-weight: 700 !important;
-  letter-spacing: .4px !important;
+  letter-spacing: 0.4px !important;
 }
 
+/* Ligne sous le titre */
 .wg-hero h1::after,
 .hero h1::after,
 .hero-title::after {
@@ -42,43 +45,6 @@ section.hero,
   display: block !important;
   height: 1px !important;
   background: var(--rule) !important;
-  margin-top: .35rem !important;
+  margin-top: 0.35rem !important;
   width: 100% !important;
-}
-
-/* 3) Boutons: enlever tout fond/ombre bootstrap-like */
-.wg-hero .btn,
-.hero .btn,
-.btn {
-  box-shadow: none !important;
-}
-
-.wg-hero .btn-primary,
-.hero .btn-primary,
-.btn-primary {
-  background: transparent !important;
-  color: var(--myBlue) !important;
-  border: 1.2px solid var(--myBlue) !important;
-}
-
-/* 4) Cards: certains thèmes utilisent .card-body et ajoutent shadow ailleurs */
-.card,
-.card * {
-  box-shadow: none !important;
-}
-.card {
-  border: 1px solid rgba(0,0,0,.12) !important;
-  border-radius: var(--radius) !important;
-  background: #fff !important;
-}
-
-/* 5) Largeur du contenu: plus “page académique” (évite effet landing très large) */
-.container, .page-body, main .container {
-  max-width: 980px !important;
-}
-
-/* 6) Réduire les espaces verticaux des sections (trop “marketing”) */
-section {
-  padding-top: 2.25rem !important;
-  padding-bottom: 2.25rem !important;
 }

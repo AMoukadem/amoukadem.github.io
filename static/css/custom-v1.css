@@ -94,3 +94,9 @@ section.wg-hero.home-section,
   height: auto !important;
 }
 
+/* Override bootstrap-like utilities inside hero only */
+.wg-hero .d-flex { display: block !important; }
+.wg-hero .align-items-center { align-items: flex-start !important; }
+.wg-hero .justify-content-center { justify-content: flex-start !important; }
+
+

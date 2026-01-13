@@ -48,3 +48,49 @@ section.wg-hero,
   margin-top: 0.35rem !important;
   width: 100% !important;
 }
+
+/* =========================
+   KILL vertical centering in hero
+   ========================= */
+
+/* Le thème centre le hero (flex + 100vh). On casse ça. */
+section.wg-hero,
+.wg-hero {
+  display: block !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Certains thèmes appliquent le flex au container interne */
+section.wg-hero .container,
+.wg-hero .container,
+section.wg-hero .row,
+.wg-hero .row {
+  display: block !important;
+  min-height: 0 !important;
+  height: auto !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Réduit les espaces standard des sections home (souvent énormes) */
+section.home-section,
+section.wg-hero.home-section,
+.home-section.wg-hero {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Si le thème force une hauteur viewport via une classe utilitaire */
+.min-vh-100,
+.vh-100 {
+  min-height: 0 !important;
+  height: auto !important;
+}
+

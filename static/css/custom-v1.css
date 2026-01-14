@@ -99,3 +99,43 @@ section.wg-hero.home-section,
 .wg-hero .align-items-center { align-items: flex-start !important; }
 .wg-hero .justify-content-center { justify-content: flex-start !important; }
 
+/* =========================================
+   HERO: kill Bootstrap flex centering + 100vh
+   ========================================= */
+
+.wg-hero .d-flex,
+.wg-hero .flex,
+.wg-hero .flex-column,
+.wg-hero .flex-row {
+  display: block !important;
+}
+
+.wg-hero .align-items-center,
+.wg-hero .align-items-stretch {
+  align-items: flex-start !important;
+}
+
+.wg-hero .justify-content-center,
+.wg-hero .justify-content-between,
+.wg-hero .justify-content-around {
+  justify-content: flex-start !important;
+}
+
+/* Les classes qui imposent une hauteur “plein écran” */
+.wg-hero .min-vh-100,
+.wg-hero .vh-100,
+.wg-hero .h-100 {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+/* Et on force aussi le container principal */
+section.wg-hero,
+.wg-hero {
+  min-height: 0 !important;
+  height: auto !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+

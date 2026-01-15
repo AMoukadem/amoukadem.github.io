@@ -263,3 +263,16 @@ section.wg-markdown:first-of-type{
   min-height: 0 !important;
   height: auto !important;
 }
+
+/* Center the main content column */
+.container, main .container, .page-body {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Some HugoBlox pages use wider wrappers */
+.page-wrapper, .page-container, main {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+

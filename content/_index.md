@@ -3,58 +3,45 @@ title: ""
 type: landing
 
 sections:
-  # =========================
-  # Header académique (Markdown)
-  # =========================
   - block: markdown
     content:
       title: ""
       text: |
-        # [Prénom NOM]
+        # Ali Moukadem
 
-        [Statut exact] — [Laboratoire], [Université / École]  
-        [Ville], [Pays] · **Email :** [prenom.nom@univ.fr]
+        Maître de conférences (MCF), HDR — IRIMAS (Institut de recherche en Informatique, Mathématiques, Automatique et Signal), Université de Haute-Alsace (UHA)  
+        Mulhouse, France · **Email :** ali.moukadem@uha.fr
 
-        **Domaines :** [3–6 mots-clés max, séparés par des virgules]
+        **Domaines :** analyse temps–fréquence, signaux non stationnaires
 
-        [CV (PDF)](/uploads/CV.pdf) · [Publications](/publications/) · [Enseignement](/courses/) · [GitHub](https://github.com/[user]) · [Google Scholar]([lien])
+        [CV (PDF)](/uploads/CV.pdf) · [Publications](/publications/) · [Enseignement](/courses/) · [Projets](/projects/) · [GitHub](https://github.com/amoukadem) · [Google Scholar](https://scholar.google.com/citations?user=Zrv5DMIAAAAJ&hl=fr)
     design:
       columns: "1"
 
-  # =========================
-  # Présentation courte
-  # =========================
   - block: markdown
     content:
       title: "Présentation"
       text: |
-        Je travaille sur **[thème 1]**, **[thème 2]** et **[thème 3]**, avec un focus sur **[objectif/angle]**.  
-        Mes intérêts actuels : **[méthodes/objets]** et **[applications]**.
+        Mes travaux portent sur l’**analyse temps–fréquence** et le traitement de **signaux non stationnaires**, avec un intérêt pour la modélisation et l’extraction d’information pertinente dans des données complexes.
 
-        - Point 1 : [une phrase claire, concrète]
-        - Point 2 : [une phrase claire, concrète]
-        - Point 3 : [une phrase claire, concrète]
+        Mes applications principales concernent :
+        - les **signaux biomédicaux**,
+        - les **systèmes électriques** (analyse, diagnostic, surveillance).
     design:
       columns: "1"
 
-  # =========================
-  # Recherche (liens rapides)
-  # =========================
   - block: markdown
     content:
       title: "Recherche"
       text: |
-        - **Axe 1 —** [1 ligne]
-        - **Axe 2 —** [1 ligne]
-        - **Axe 3 —** [1 ligne, optionnel]
+        - **Analyse temps–fréquence :** représentations et méthodes associées pour l’étude de signaux évolutifs.
+        - **Signaux non stationnaires :** estimation, détection et extraction de structures (composantes, transitoires, modulation).
+        - **Applications :** biomédical et systèmes électriques.
 
         👉 Voir : **[Projets](/projects/)**.
     design:
       columns: "1"
 
-  # =========================
-  # Publications récentes (auto)
-  # =========================
   - block: collection
     content:
       title: "Publications récentes"
@@ -65,14 +52,11 @@ sections:
     design:
       view: citation
 
-  # =========================
-  # Enseignement (aperçu)
-  # =========================
   - block: markdown
     content:
       title: "Enseignement"
       text: |
-        Je propose des cours en **[L1/L2/L3/M1/M2]** (analyse, algèbre, proba, méthodes numériques, …).
+        Vous trouverez ici mes cours (plans, supports, TD) :
 
         - [Cours 1] — [niveau] — [année]
         - [Cours 2] — [niveau] — [année]
@@ -82,22 +66,18 @@ sections:
     design:
       columns: "1"
 
-  # =========================
-  # Contact (ancre menu)
-  # =========================
   - block: markdown
     id: contact
     content:
       title: "Contact"
       text: |
-        **Email :** [prenom.nom@univ.fr]  
-        **Bureau :** [bâtiment, salle]  
-        **Adresse :** [adresse complète]
+        **Ali Moukadem**  
+        IRIMAS — Université de Haute-Alsace (UHA)  
+        Mulhouse, France  
+        **Email :** ali.moukadem@uha.fr
 
-        - Google Scholar : [lien]
-        - arXiv : [lien]
-        - HAL : [lien]
-        - GitHub : https://github.com/[user]
+        - Google Scholar : https://scholar.google.com/citations?user=Zrv5DMIAAAAJ&hl=fr
+        - GitHub : https://github.com/amoukadem
     design:
       columns: "1"
 ---

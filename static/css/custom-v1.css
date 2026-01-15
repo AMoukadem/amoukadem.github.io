@@ -1,7 +1,9 @@
 /* =========================================================
-   Academic (A) — Blue/Grey, paper-like, Beamer-inspired
-   Target: HugoBlox site with minimal "marketing" feel
-   Works best if homepage uses a Markdown block instead of Hero.
+   Academic light theme (Beamer-inspired)
+   - Blue accent: myBlue
+   - Grey structure
+   - Paper-like, dense, no marketing hero
+   - Works best with homepage using Markdown block (no Hero)
    ========================================================= */
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap");
@@ -47,7 +49,7 @@ small, .small, .text-muted{
   color: var(--muted) !important;
 }
 
-/* Keep content from being too wide (academic reading width) */
+/* Reading width */
 .container, main .container, .page-body{
   max-width: 980px !important;
 }
@@ -56,7 +58,7 @@ small, .small, .text-muted{
    Headings (serif)
    ------------------------- */
 h1,h2,h3,h4,h5,h6,
-.navbar, .site-header, .hero-title{
+.navbar, .site-header{
   font-family: var(--font-heading) !important;
   letter-spacing: .30px;
   color: rgba(0,0,0,.90);
@@ -85,7 +87,7 @@ a:hover{
   text-decoration-thickness: 2px;
 }
 
-/* List markers grey */
+/* List markers */
 ul li::marker, ol li::marker{
   color: rgba(0,0,0,.40);
 }
@@ -109,6 +111,14 @@ ul li::marker, ol li::marker{
 }
 
 /* -------------------------
+   Section spacing (less "landing")
+   ------------------------- */
+section{
+  padding-top: 2.0rem !important;
+  padding-bottom: 2.0rem !important;
+}
+
+/* -------------------------
    Buttons (academic, not CTA)
    ------------------------- */
 .btn, button, .button, .btn-group .btn{
@@ -127,11 +137,6 @@ ul li::marker, ol li::marker{
   background: rgba(0,126,227,.05) !important;
 }
 
-.btn-secondary, .btn.btn-secondary{
-  background: transparent !important;
-  color: rgba(0,0,0,.80) !important;
-}
-
 /* -------------------------
    Cards / listings (flat)
    ------------------------- */
@@ -147,18 +152,10 @@ ul li::marker, ol li::marker{
   box-shadow: none !important;
 }
 
-/* Slightly reduce excessive padding in cards */
+/* Reduce excess padding */
 .card-body, .article-style{
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
-}
-
-/* -------------------------
-   Sections spacing (less "marketing")
-   ------------------------- */
-section{
-  padding-top: 2.1rem !important;
-  padding-bottom: 2.1rem !important;
 }
 
 /* -------------------------
@@ -220,13 +217,23 @@ th{
   background: rgba(0,0,0,.02);
 }
 
-/* -------------------------
-   Homepage Markdown "hero" support
-   (if you use a Markdown block with an H1)
-   ------------------------- */
+/* =========================================================
+   Homepage Markdown header styling
+   (works with your new _index.md)
+   ========================================================= */
+
+/* Make the first Markdown section feel like the header */
+section.wg-markdown:first-of-type{
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+/* Header title */
 .wg-markdown h1{
   margin-top: 0 !important;
   margin-bottom: .35rem !important;
+  font-size: 2.6rem !important; /* calmer que le défaut */
+  letter-spacing: .35px !important;
 }
 
 .wg-markdown h1::after{
@@ -238,26 +245,21 @@ th{
   width: 100%;
 }
 
+/* Compact paragraph under title */
 .wg-markdown h1 + p{
   margin-top: .25rem !important;
 }
 
-/* Make the first markdown section feel like a header */
-section.wg-markdown:first-of-type{
-  padding-top: 1.6rem !important;
-  padding-bottom: 1.6rem !important;
+/* Link row looks like academic nav */
+.wg-markdown a{
+  margin-right: .35rem;
 }
 
-/* -------------------------
-   Last resort: neutralize "full viewport hero" utilities globally
-   (safe because you stopped using Hero block)
-   ------------------------- */
+/* =========================================================
+   Last resort: neutralize viewport-height utilities
+   (safe now that you removed Hero block)
+   ========================================================= */
 .min-vh-100, .vh-100, .h-100{
   min-height: 0 !important;
   height: auto !important;
-}
-.d-flex{
-  /* avoid surprise vertical centering across the site */
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
 }

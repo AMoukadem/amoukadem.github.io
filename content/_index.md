@@ -3,34 +3,24 @@ title: ""
 type: landing
 
 sections:
-  - block: hero
+  - block: markdown
     content:
-      title: "Prénom Nom"
+      title: ""
       text: |
-        Maître de conférences / Doctorant / Postdoc — Laboratoire, Université
+        # Prénom Nom
 
+        Maître de conférences / Doctorant / Postdoc — Laboratoire, Université  
         **Mots-clés :** analyse, EDP, optimisation, …
-      primary_action:
-        text: CV (PDF)
-        url: uploads/CV.pdf
-        icon: download
-      secondary_action:
-        text: Contact
-        url: "#contact"
+
+        [CV (PDF)](/uploads/CV.pdf) · [Contact](#contact)
     design:
-      background:
-        color: white
+      columns: "1"
 
   - block: markdown
     content:
       title: "Recherche"
       text: |
-        Je travaille sur :
-        - Axe 1 : …
-        - Axe 2 : …
-        - Axe 3 : …
-
-        👉 Voir la page **Recherche**.
+        Je travaille sur …
     design:
       columns: "1"
 
@@ -38,9 +28,9 @@ sections:
     content:
       title: "Enseignement"
       text: |
-        Cours (L1–M2) : analyse, algèbre, méthodes numériques, …
-
-        👉 Voir la page **Enseignement**.
+        - Cours 1
+        - Cours 2
+        - Cours 3
     design:
       columns: "1"
 
@@ -59,13 +49,7 @@ sections:
     content:
       title: "Contact"
       text: |
-        Email : **ton.email@univ.fr**  
-        Bureau : [bâtiment / salle]  
-        Adresse : [adresse]
-
-        - Google Scholar : [lien]
-        - arXiv : [lien]
-        - GitHub : https://github.com/ton-user
+        Email : **prenom.nom@univ.fr**
     design:
       columns: "1"
 ---

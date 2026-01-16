@@ -193,3 +193,28 @@ th{
   font-weight: 700;
   background: rgba(0,0,0,.02);
 }
+
+/* =========================================
+   Sidebar layout without relying on body.home
+   Apply on landing pages (your homepage is a landing page)
+   ========================================= */
+
+@media (min-width: 992px){
+
+  /* Make the first markdown section act as a left sidebar */
+  main section.wg-markdown:first-of-type{
+    width: var(--sidebar-w);
+    float: left;
+    position: sticky;
+    top: 88px; /* under navbar */
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Push the rest of the homepage sections to the right */
+  main section.home-section:not(:first-of-type),
+  main section:not(:first-of-type){
+    margin-left: calc(var(--sidebar-w) + var(--gap));
+  }
+}
+

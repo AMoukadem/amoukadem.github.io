@@ -1,0 +1,195 @@
+/* =========================================================
+   Academic sidebar layout (Wowchemy-like)
+   - Left sticky profile column (first markdown section)
+   - Right main content (other sections)
+   - Clean sans-serif, blue/grey accents
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap");
+
+:root{
+  --myBlue:#007EE3;
+  --ink: rgba(0,0,0,.88);
+  --muted: rgba(0,0,0,.66);
+  --rule: rgba(0,0,0,.12);
+  --paper:#ffffff;
+  --panel: rgba(0,0,0,.02);
+  --radius: 12px;
+
+  --font: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  --sidebar-w: 300px;
+  --gap: 40px;
+}
+
+/* Base */
+html, body{
+  background: var(--paper) !important;
+  color: var(--ink);
+  font-family: var(--font);
+}
+p{ line-height: 1.55; }
+small,.small,.text-muted{ color: var(--muted) !important; }
+
+a{
+  color: var(--myBlue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+a:hover{ text-decoration-thickness: 2px; }
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font) !important;
+  color: rgba(0,0,0,.92);
+}
+h2{
+  margin-top: 2rem;
+  padding-bottom: .25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Navbar (simple) */
+.navbar, .site-header{
+  background: var(--paper) !important;
+  border-bottom: 1px solid rgba(0,0,0,.08) !important;
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important;
+}
+.navbar a{ text-decoration: none; }
+.navbar a:hover{ text-decoration: underline; text-decoration-thickness: 2px; }
+
+/* Main reading width */
+.container, main .container, .page-body{
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Make sections less “landing page” */
+section{
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+}
+
+/* -------------------------
+   Sidebar layout (desktop)
+   ------------------------- */
+@media (min-width: 992px){
+  /* Turn homepage into a 2-col layout */
+  body.home main{
+    position: relative;
+  }
+
+  /* 1st section = left profile sidebar */
+  body.home section.wg-markdown:first-of-type{
+    width: var(--sidebar-w);
+    float: left;
+    position: sticky;
+    top: 88px; /* below navbar */
+    align-self: flex-start;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+  }
+
+  /* Other sections = main column to the right */
+  body.home section:not(:first-of-type){
+    margin-left: calc(var(--sidebar-w) + var(--gap));
+  }
+}
+
+/* -------------------------
+   Profile block styling
+   ------------------------- */
+
+/* Name */
+body.home section.wg-markdown:first-of-type h1{
+  font-size: 2.1rem !important;
+  font-weight: 700 !important;
+  margin-top: 0 !important;
+  margin-bottom: .35rem !important;
+}
+
+/* Tighten the first paragraph(s) */
+body.home section.wg-markdown:first-of-type p{
+  margin-bottom: .5rem;
+}
+
+/* A subtle card feel */
+body.home section.wg-markdown:first-of-type{
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: var(--radius);
+  padding: 1rem 1rem !important;
+  background: var(--paper);
+}
+
+/* If you add an image at the top of the first markdown section */
+body.home section.wg-markdown:first-of-type img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 999px;
+  display: block;
+  margin: 0 0 .8rem 0;
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+/* Links line in profile: make it look like compact badges */
+body.home section.wg-markdown:first-of-type a{
+  display: inline-block;
+  margin-right: .35rem;
+  margin-bottom: .25rem;
+}
+
+/* -------------------------
+   Cards/listings: flat academic
+   ------------------------- */
+.card, .article, .view-card, .project-card,
+.listing-item, .view-list-item, .publication, .talk, .course{
+  background: var(--paper) !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+}
+
+/* Buttons: quiet */
+.btn, button, .button{
+  border-radius: 999px !important;
+  border: 1px solid rgba(0,0,0,.14) !important;
+  box-shadow: none !important;
+}
+.btn-primary{
+  background: transparent !important;
+  color: var(--myBlue) !important;
+  border: 1.2px solid var(--myBlue) !important;
+}
+.btn-primary:hover{ background: rgba(0,126,227,.06) !important; }
+
+/* Callouts (theorem-ish) */
+.callout{
+  border: 1px solid rgba(0,126,227,.45) !important;
+  background: rgba(230,245,255,.65) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+}
+.callout .callout-title{
+  font-weight: 700 !important;
+  color: var(--myBlue) !important;
+}
+
+/* Tables */
+table{
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+th, td{
+  padding: .6rem .7rem;
+  border-bottom: 1px solid rgba(0,0,0,.07);
+}
+th{
+  font-weight: 700;
+  background: rgba(0,0,0,.02);
+}

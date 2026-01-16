@@ -207,3 +207,39 @@ th{
     background: var(--paper);
   }
 }
+
+/* ===== FORCE 2-column layout on homepage ===== */
+
+@media (min-width: 992px){
+
+  main .container {
+    display: grid !important;
+    grid-template-columns: var(--sidebar-w) 1fr !important;
+    column-gap: var(--gap) !important;
+    align-items: start;
+  }
+
+  /* Left column = first section */
+  main .container > section:first-child {
+    position: sticky;
+    top: 88px;
+    align-self: start;
+    padding: 1rem 1rem !important;
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: var(--radius);
+    background: var(--paper);
+  }
+
+  /* Right column = everything else */
+  main .container > section:not(:first-child) {
+    grid-column: 2;
+  }
+
+  /* Shrink name size in sidebar */
+  main .container > section:first-child h1 {
+    font-size: 1.9rem !important;
+    line-height: 1.1 !important;
+    margin-top: 0 !important;
+  }
+}
+

@@ -1,8 +1,9 @@
 /* =========================================================
-   Academic sidebar layout (Wowchemy-like)
-   - Left sticky profile column (first markdown section)
-   - Right main content (other sections)
+   Academic Sidebar Layout (Wowchemy-like)
+   - Left sticky profile column = 1st Markdown section on homepage
+   - Right content column = rest of homepage sections
    - Clean sans-serif, blue/grey accents
+   - Does NOT rely on body.home (more robust with HugoBlox)
    ========================================================= */
 
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700&display=swap");
@@ -18,16 +19,24 @@
 
   --font: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-  --sidebar-w: 300px;
-  --gap: 40px;
+  --sidebar-w: 320px;
+  --gap: 48px;
 }
 
-/* Base */
+/* -------------------------
+   Base
+   ------------------------- */
 html, body{
   background: var(--paper) !important;
   color: var(--ink);
   font-family: var(--font);
+  letter-spacing: .05px;
 }
+
+main{
+  background: var(--paper) !important;
+}
+
 p{ line-height: 1.55; }
 small,.small,.text-muted{ color: var(--muted) !important; }
 
@@ -42,10 +51,24 @@ h1,h2,h3,h4,h5,h6{
   font-family: var(--font) !important;
   color: rgba(0,0,0,.92);
 }
+
 h2{
   margin-top: 2rem;
   padding-bottom: .25rem;
   border-bottom: 1px solid var(--rule);
+}
+
+/* Main reading width */
+.container, main .container, .page-body{
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Less “landing page” vertical spacing */
+section{
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
 }
 
 /* Navbar (simple) */
@@ -58,88 +81,6 @@ h2{
 .navbar a{ text-decoration: none; }
 .navbar a:hover{ text-decoration: underline; text-decoration-thickness: 2px; }
 
-/* Main reading width */
-.container, main .container, .page-body{
-  max-width: 1180px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Make sections less “landing page” */
-section{
-  padding-top: 1.2rem !important;
-  padding-bottom: 1.2rem !important;
-}
-
-/* -------------------------
-   Sidebar layout (desktop)
-   ------------------------- */
-@media (min-width: 992px){
-  /* Turn homepage into a 2-col layout */
-  body.home main{
-    position: relative;
-  }
-
-  /* 1st section = left profile sidebar */
-  body.home section.wg-markdown:first-of-type{
-    width: var(--sidebar-w);
-    float: left;
-    position: sticky;
-    top: 88px; /* below navbar */
-    align-self: flex-start;
-    padding-top: 1.2rem !important;
-    padding-bottom: 1.2rem !important;
-  }
-
-  /* Other sections = main column to the right */
-  body.home section:not(:first-of-type){
-    margin-left: calc(var(--sidebar-w) + var(--gap));
-  }
-}
-
-/* -------------------------
-   Profile block styling
-   ------------------------- */
-
-/* Name */
-body.home section.wg-markdown:first-of-type h1{
-  font-size: 2.1rem !important;
-  font-weight: 700 !important;
-  margin-top: 0 !important;
-  margin-bottom: .35rem !important;
-}
-
-/* Tighten the first paragraph(s) */
-body.home section.wg-markdown:first-of-type p{
-  margin-bottom: .5rem;
-}
-
-/* A subtle card feel */
-body.home section.wg-markdown:first-of-type{
-  border: 1px solid rgba(0,0,0,.10);
-  border-radius: var(--radius);
-  padding: 1rem 1rem !important;
-  background: var(--paper);
-}
-
-/* If you add an image at the top of the first markdown section */
-body.home section.wg-markdown:first-of-type img{
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 999px;
-  display: block;
-  margin: 0 0 .8rem 0;
-  border: 1px solid rgba(0,0,0,.10);
-}
-
-/* Links line in profile: make it look like compact badges */
-body.home section.wg-markdown:first-of-type a{
-  display: inline-block;
-  margin-right: .35rem;
-  margin-bottom: .25rem;
-}
-
 /* -------------------------
    Cards/listings: flat academic
    ------------------------- */
@@ -150,6 +91,7 @@ body.home section.wg-markdown:first-of-type a{
   border-radius: var(--radius) !important;
   box-shadow: none !important;
 }
+.card *{ box-shadow: none !important; }
 
 /* Buttons: quiet */
 .btn, button, .button{
@@ -157,14 +99,14 @@ body.home section.wg-markdown:first-of-type a{
   border: 1px solid rgba(0,0,0,.14) !important;
   box-shadow: none !important;
 }
-.btn-primary{
+.btn-primary, .btn.btn-primary{
   background: transparent !important;
   color: var(--myBlue) !important;
   border: 1.2px solid var(--myBlue) !important;
 }
 .btn-primary:hover{ background: rgba(0,126,227,.06) !important; }
 
-/* Callouts (theorem-ish) */
+/* Callouts */
 .callout{
   border: 1px solid rgba(0,126,227,.45) !important;
   background: rgba(230,245,255,.65) !important;
@@ -194,27 +136,74 @@ th{
   background: rgba(0,0,0,.02);
 }
 
-/* =========================================
-   Sidebar layout without relying on body.home
-   Apply on landing pages (your homepage is a landing page)
-   ========================================= */
+/* =========================================================
+   Sidebar layout (desktop)
+   - 1st Markdown section becomes sticky sidebar
+   - Remaining sections shift right
+   ========================================================= */
 
 @media (min-width: 992px){
 
-  /* Make the first markdown section act as a left sidebar */
+  /* First markdown section = sidebar */
   main section.wg-markdown:first-of-type{
     width: var(--sidebar-w);
     float: left;
     position: sticky;
-    top: 88px; /* under navbar */
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+    top: 88px; /* below navbar */
+    align-self: flex-start;
+    padding: 1rem 1rem !important;
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: var(--radius);
+    background: var(--paper);
   }
 
-  /* Push the rest of the homepage sections to the right */
-  main section.home-section:not(:first-of-type),
+  /* Reduce sidebar header size */
+  main section.wg-markdown:first-of-type h1{
+    font-size: 1.9rem !important;
+    line-height: 1.12 !important;
+    margin-top: 0 !important;
+    margin-bottom: .35rem !important;
+    font-weight: 800 !important;
+    letter-spacing: .1px !important;
+  }
+
+  /* Tighten sidebar paragraphs */
+  main section.wg-markdown:first-of-type p{
+    margin-bottom: .55rem !important;
+  }
+
+  /* If you add an image at top of sidebar */
+  main section.wg-markdown:first-of-type img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 999px;
+    display: block;
+    margin: 0 0 .8rem 0;
+    border: 1px solid rgba(0,0,0,.10);
+  }
+
+  /* Push all other sections to the right */
   main section:not(:first-of-type){
     margin-left: calc(var(--sidebar-w) + var(--gap));
   }
+
+  /* Clear floats so footer stays below */
+  main::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
 }
 
+/* =========================================================
+   Mobile: keep it simple (one column)
+   ========================================================= */
+@media (max-width: 991px){
+  main section.wg-markdown:first-of-type{
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: var(--radius);
+    padding: 1rem 1rem !important;
+    background: var(--paper);
+  }
+}

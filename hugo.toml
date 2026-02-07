@@ -1,0 +1,11 @@
+baseURL = "https://amoukadem.github.io/"
+languageCode = "fr-fr"
+title = "A. Moukadem"
+
+[params]
+  description = "Personal academic page"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

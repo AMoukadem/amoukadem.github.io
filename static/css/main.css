@@ -1,3 +1,5 @@
+html { outline: 12px solid red !important; }
+
 :root{
   --ink: rgba(0,0,0,.88);
   --muted: rgba(0,0,0,.62);
